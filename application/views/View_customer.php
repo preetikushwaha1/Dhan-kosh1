@@ -12,6 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_page.css');?>" rel="stylesheet" />
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/DataTables/datatables.min.css');?>"/>
+  <script type="text/javascript" src="<?php echo base_url('assets2/DataTables/datatables.min.js');?>"></script>
  
 </head>
 
@@ -45,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="content-panel">
               <div class="adv-table">
-                <table cellpadding="2" cellspacing="2" border="0" class="display table table-bordered">
+                <table cellpadding="2" cellspacing="2" border="0" class="display table table-bordered" id="datatables">
                   <!--?php echo $this->db->last_query();?-->
                   <thead>
                     <tr class="gradeX">
@@ -140,11 +142,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
   <!-- js placed at the end of the document so the pages load faster -->
+   <script src="<?php echo base_url('assets2/lib/jquery/jquery.min.js');?>"></script>
  
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.js');?>"></script>
 
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.dataTables.js');?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/DT_bootstrap.js');?>"></script>
+
+
 
 
 </body>
