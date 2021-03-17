@@ -1,25 +1,32 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
+  <!--external css-->
+
+  <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_page.css');?>" rel="stylesheet" />
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
-
- 
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/DataTables/datatables.min.css');?>"/>
+  <script type="text/javascript" src="<?php echo base_url('assets2/DataTables/datatables.min.js');?>"></script>
+ <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"/>
 </head>
 
 <body>
+  <section id="container">
  
+    <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-         <h3><!--i class="fa fa-angle-right"--></i>View Customer</h3>
+        <h3><!--i class="fa fa-angle-right"--></i>View Customer</h3>
         <div class="row mb">
           <!-- page start-->
-              <div class="form-panel">
+
+          <div class="form-panel">
           
               <form class="form-horizontal style-form" method="post" name="view_cust_form" id="view_cust_form" 
               action="<?php echo site_url('Main/view_customer');?>">
@@ -37,13 +44,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </form>
               <br>
 
-
-          <div class="content-panel">
-
-            <div class="adv-table">
-              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
-                <thead>
-                  <tr class="gradeX">
+            <div class="content-panel">
+              <div class="adv-table">
+                <table cellpadding="2" cellspacing="2" border="0" class="display table table-bordered" id="hidden-table-info">
+                  <!--?php echo $this->db->last_query();?-->
+                  <thead>
+                  
+                    <tr class="gradeX">
                       <th>Customer Id</th>
                       <th>Date</th>
                       <th>Customer Name</th>
@@ -53,12 +60,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th>DOB</th>
                       <th>Email</th>
                       <th>Phone Number</th>
-                      <!--th>Address</th-->
-                    
+                      <th>Address Details</th>
                     </tr>
-                </thead>
-                <tbody>
-                   <?php 
+                  </thead>
+                  <tbody>
+                    <!--tr class="gradeX">
+                      <td>Trident</td>
+                      <td>Internet Explorer 4.0</td>
+                      <td class="hidden-phone">Win 95+</td>
+                      <td class="center hidden-phone">4</td>
+                      <td class="center hidden-phone">X</td>
+                      <td class="hidden-phone">Win 95+</td>
+                      <td class="center hidden-phone">4</td>
+                      <td class="center hidden-phone">X</td>
+                      <td class="hidden-phone">Win 95+</td>
+                      <td class="hidden-phone">Win 95+</td>
+                
+                    </tr-->
+
+                    <!--?php 
+                        if(isset($_POST['search_by_Cust_id']))
+                        {
+                          $cust_id =  $_POST['customer_id'];
+                          $query = "SELECT * FROM customer_details where customer_id= $cust_id";
+                        }
+                      ?-->
+                    <?php 
                       if($fetch_new_customer_data->num_rows() > 0)
                       {
                         foreach ($fetch_new_customer_data->result() as $rows){?>
@@ -72,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?php echo $rows->dob;?></td>
                             <td><?php echo $rows->email;?></td>
                             <td><?php echo $rows->phone_no;?></td>
-                            <!--td>address</td-->
+                            <td><button class="btn btn-primary">View Address</button></td>
                           </tr>
                           
                        <?php }
@@ -87,51 +114,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                        <?php
                       }?>
-                </tbody>
-              </table><br><br><br>
-            </div>
-        <!-- /MAIN CONTENT -->
-      </div>
-    </div>
-  </div>
-</section>
-</section>
-    <!--main content end-->
-    <!--footer start-->
-    <footer class="site-footer">
-      <div class="text-center">
-        <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
-        </p>
-        <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
-        </div>
-        <a href="advanced_table.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
-          </a>
-      </div>
-    </footer>
-    <!--footer end-->
-  </section>
-  <!-- js placed at the end of the document so the pages load faster -->
+                   
+                   
+                  </tbody>
 
+                </table>
+          
+                <div align="right">
+                    <?php echo $pagination_links ;?>
+                  <div>
+             
+              </div>
+            </div>
+          <!-- page end-->
+        </div>
+        </div>
+
+
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+
+  </section>
+
+
+  <!-- js placed at the end of the document so the pages load faster -->
+   <script src="<?php echo base_url('assets2/lib/jquery/jquery.min.js');?>"></script>
+ 
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.js');?>"></script>
-  <script src="<?php echo base_url('assets2/lib/bootstrap/js/bootstrap.min.js');?>"></script>
-  <script class="include" type="text/javascript" src="<?php echo base_url('assets2/lib/jquery.dcjqaccordion.2.7.js');?>"></script>
-  <script src="<?php echo base_url('assets2/lib/jquery.scrollTo.min.js');?>"></script>
-  <script src="<?php echo base_url('assets2/lib/jquery.nicescroll.js');?>" type="text/javascript"></script>
+
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.dataTables.js');?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/DT_bootstrap.js');?>"></script>
-  <!--common script for all pages-->
-  <script src="<?php echo base_url('assets2/lib/common-scripts.js');?>"></script>
-  <!--script for this page-->
-  <script type="text/javascript">
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+   <script type="text/javascript">
     /* Formating function for row details */
     function fnFormatDetails(oTable, nTr) {
       var aData = oTable.fnGetData(nTr);
@@ -148,17 +167,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       /*
        * Insert a 'details' column to the table
        */
-      var nCloneTh = document.createElement('th');
-      var nCloneTd = document.createElement('td');
-      //nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-     // nCloneTd.className = "center";
+     // var nCloneTh = document.createElement('th');
+      //var nCloneTd = document.createElement('td');
+     // nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
+      //nCloneTd.className = "center";
 
       $('#hidden-table-info thead tr').each(function() {
-        this.insertBefore(nCloneTh, this.childNodes[1]);
+        this.insertBefore(nCloneTh, this.childNodes[0]);
       });
 
       $('#hidden-table-info tbody tr').each(function() {
-        this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[1]);
+        this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
       });
 
       /*
@@ -167,10 +186,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{
           "bSortable": false,
-          "aTargets": [1]
+          "aTargets": [0]
         }],
         "aaSorting": [
-          [1, 'desc']
+          [1, 'asc']
         ]
       });
 
@@ -182,16 +201,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         var nTr = $(this).parents('tr')[0];
         if (oTable.fnIsOpen(nTr)) {
           /* This row is already open - close it */
-          this.src = "<?php echo base_url('assets2/lib/advanced-datatable/media/images/details_open.png');?>";
+          this.src = "lib/advanced-datatable/media/images/details_open.png";
           oTable.fnClose(nTr);
         } else {
           /* Open this row */
-          this.src = "<?php echo base_url('assets2/lib/advanced-datatable/images/details_close.png');?>";
+          this.src = "lib/advanced-datatable/images/details_close.png";
           oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
         }
       });
     });
   </script>
-</body>
 
+</body>
 </html>

@@ -34,6 +34,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url('assets2/css/style-responsive.css');?>" rel="stylesheet">
   <script src="<?php echo base_url('assets2/lib/chart-master/Chart.js');?>"></script>
 
+
+
+
+
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/

@@ -40,6 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="<?php echo base_url('assets2/lib/sparkline-chart.js');?>"></script>
   <script src="<?php echo base_url('assets2/lib/zabuto_calendar.js');?>"></script>
 
+  
+
 
   <script type="text/javascript">
     $(document).ready(function() {

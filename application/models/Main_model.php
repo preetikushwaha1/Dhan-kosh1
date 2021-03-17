@@ -12,9 +12,9 @@ class Main_model extends CI_Model
 	}
 
 	//==fetch new customer data=====================================//
-	public function fetch_new_customer_data($limit,$offset)
+	public function fetch_new_customer_data()
 	{
-		$this->db->limit($limit,$offset);
+		//$this->db->limit($limit,$offset);
 		$this->db->order_by("date",'desc');
 		$query = $this->db->get('customer_details');
 

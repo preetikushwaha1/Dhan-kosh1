@@ -127,7 +127,7 @@ class Main extends CI_Controller {
 	
 		$this->load->model('Main_model');
 
-		$this->load->library('pagination'); 
+		/*$this->load->library('pagination'); 
 
 		 $config=[		
         'base_url' => base_url('index.php/Main/view_customer'),
@@ -146,14 +146,14 @@ class Main extends CI_Controller {
 
  		];
 
-
 		$this->pagination->initialize($config);
-
+*/
 		//echo $this->pagination->create_links();
 
 
-		$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data($config['per_page'],$this->uri->segment(3));
-		$data['pagination_links'] = $this->pagination->create_links();
+		//$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data($config['per_page'],$this->uri->segment(3));
+		$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data();
+		//$data['pagination_links'] = $this->pagination->create_links();
 
 		/*echo"<pre";
 		print_r($data);
@@ -162,7 +162,7 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_customer.php', $data);
-		$this->load->view('Template2/Footer.php');
+		// $this->load->view('Template2/Footer.php');
 
 	}
 /*===============================================================================================*/
@@ -511,6 +511,8 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Profile.php');
 		$this->load->view('Template2/Footer.php');
+
+
 
 	}
 
