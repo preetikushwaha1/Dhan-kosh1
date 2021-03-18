@@ -27,8 +27,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="col-sm-4">
                     <select  class="form-control" name="account_type" id="account_type">
                       <option value="">Select Account</option>
-                      <option value="saving_account">Saving Account</option>
-                      <option value="current_account">Current Account</option>
+                      <option value="Saving account">Saving Account</option>
+                      <option value="Current account">Current Account</option>
                     </select>
                     <span class="text-danger"><?php echo form_error('account_type');?></span>
                   </div>

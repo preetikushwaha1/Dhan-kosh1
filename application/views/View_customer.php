@@ -8,8 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
  
 </head>
@@ -57,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th>Email</th>
                       <th>Address</th>
                  
-
+s
                     
                     </tr>
                 </thead>

@@ -172,34 +172,24 @@ class Main extends CI_Controller {
 	public function edit_delete_customer()
 	{
 		$this->load->model('Main_model');
-		$customer_id = $this->input->post('cust_id');
-		$data['fetch_data_by_customer_id'] = $this->Main_model->fetch_data_by_customer_id($customer_id);
+		//$customer_id = $this->input->post('cust_id');
+		//$data['fetch_data_by_customer_id'] = $this->Main_model->fetch_data_by_customer_id($customer_id);
+		$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data();
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Edit_delete_customer.php',$data);
-		$this->load->view('Template2/Footer.php');
+	//	$this->load->view('Template2/Footer.php');
 
 	}
 /*===================================================================================================================*/
 
-
-/*=============View Customer Contact========================================*/
-		public function view_customer_contact()
-			{
-
-				$this->load->model('Main_model');
-				$customer_id = $this->input->post('customer_id');
-			
-
-				$data['fetch_data_by_customer_id'] = $this->Main_model->fetch_data_by_customer_id($customer_id);
-				$this->load->view('Template2/Header.php');
-				$this->load->view('Template2/Sidebar.php');
-				$this->load->view('Edit_delete_customer.php',$data);
-				$this->load->view('Template2/Footer.php');
-
-
-			}
-
+	public function delete_customer()
+	{
+		$this->load->model('Main_model');
+		$customer_id=$this->uri->segment(3);
+		$this->Main_model->delete_customer_data($customer_id);
+		redirect('Main/edit_delete_account');
+	}
 
 //====================================================================================//
 /*================search delete Customer===============================================================*/
@@ -294,7 +284,7 @@ class Main extends CI_Controller {
 	{
 		$this->load->model('Main_model');
 		
-		$this->load->library('pagination'); 
+	/*	$this->load->library('pagination'); 
 
 		 $config=[		
         'base_url' => base_url('index.php/Main/view_account'),
@@ -314,18 +304,20 @@ class Main extends CI_Controller {
  		];
 
 
-		$this->pagination->initialize($config);
+		$this->pagination->initialize($config);*/
 
 		//echo $this->pagination->create_links();
 
 
-		$data['fetch_new_account_data'] = $this->Main_model->fetch_new_account_data($config['per_page'],$this->uri->segment(3));
-		$data['pagination_links'] = $this->pagination->create_links();
+		//$data['fetch_new_account_data'] = $this->Main_model->fetch_new_account_data($config['per_page'],$this->uri->segment(3));
+		//$data['pagination_links'] = $this->pagination->create_links();
+
+		$data['fetch_new_account_data'] = $this->Main_model->fetch_new_account_data();
 
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_account.php', $data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 
@@ -340,7 +332,7 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Edit_delete_account.php', $data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 

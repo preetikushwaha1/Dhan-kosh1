@@ -66,9 +66,9 @@ class Main_model extends CI_Model
 		
 	}
 	//=== fetch new account data==========================================//
-	public function fetch_new_account_data($limit,$offset)
+	public function fetch_new_account_data()
 	{
-		$this->db->limit($limit,$offset);
+		//$this->db->limit($limit,$offset);
 		$this->db->order_by('date','desc');
 		$query = $this->db->get('account_details');
 		return $query;
