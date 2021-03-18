@@ -330,13 +330,7 @@ class Main extends CI_Controller {
 
 	public function view_balance()
 	{
-		$this->load->model('Main_model');
-		$account_number = $this->input->post('account_no');
-		$data['fetch_balance'] = $this->Main_model->fetch_balance($account_number);
-		$this->load->view('Template2/Header.php');
-		$this->load->view('Template2/Sidebar.php');
-		$this->load->view('Balance.php');
-		$this->load->view('Template2/Footer.php');
+		echo "hello";
 
 	}
 
