@@ -16,13 +16,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-  <section id="container"> 
+  <section id="container">
+ 
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
         <h3><!--i class="fa fa-angle-right"></i-->Balance </h3>
         <div class="row mb">
           <!-- page start-->
+
            <div class="form-panel">
           
               <form class="form-horizontal style-form" method="post" action="<?php echo site_url('Main/view_balance');?>">
@@ -44,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="adv-table">
                   <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" >
                     <thead>
-                      <tr class="gradeX">
+                      <tr>
                         <th>Customer Id</th>
                         <th>Customer Name</th>
                         <th>Account Number</th>
@@ -54,9 +56,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     </thead>
                     <tbody>
-                      
+                    
                     <?php 
-
                       if($fetch_balance->num_rows() > 0)
                       {
                         foreach ($fetch_balance->result() as $rows){?>
@@ -82,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                        <?php
                       }?>
                    
-        
+                     
                      
                     </tbody>
                   </table>
@@ -127,6 +128,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
    
     });
+
+
+
 
   </script>
 </body>

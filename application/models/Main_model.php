@@ -139,15 +139,21 @@ class Main_model extends CI_Model
 //==fetch balance by account number=====================================//
 	public function fetch_balance($account_number)
 	{
-		$this->db->distinct('acc.customer_id');
+		/*$this->db->distinct('acc.customer_id');
 		$this->db->select('cust.customer_id, cust.first_name , cust.last_name, acc.account_number, acc.opening_balance');
 		$this->db->from('customer_details cust');
 		$this->db->join('account_details acc','acc.customer_id = cust.customer_id');
 		$query= $this->db->get('account_details');
 		//echo $this->db->last_query();
 		return $query;
+*/	
+		$this->db->where('$account_number',$account_number);
+		$query = $this->db->get('account_details');
+		return $query;
+		
 
 	}
+
 //============================================================================//
 
 //==========Insert Fund transfer data ====================================//

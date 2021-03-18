@@ -9,22 +9,17 @@ class Main extends CI_Controller {
 
         $this->load->library('pagination');
      	if(!$this->session->userdata('user_name')) 
-     		redirect('Login'); 
-
-     	
+     		redirect('Login');  	
     }
 
 
 	/*-==============================Dashboard========================================================================*/
 	public function index()
 	{
-
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Template2/Dashboard.php');
 		$this->load->view('Template2/Footer.php');
-
-
 	}
 	/*======================================================================================================*/
 
@@ -33,12 +28,10 @@ class Main extends CI_Controller {
 /*=================New customer====================================================================*/
 	public function new_customer()
 	{
-
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('New_customer.php');
 		$this->load->view('Template2/Footer.php');
-
 	}
 
 	//---Form validation of add new customer---//
@@ -64,7 +57,6 @@ class Main extends CI_Controller {
 			$this->load->model('Main_model');
 			$this->load->helper('date');
 			$now = date("Y-m-d H:i:s");
-
 			$data = array(
 					"first_name" => $this->input->post('first_name'),
 					"last_name"	 => $this->input->post('last_name'),
@@ -96,8 +88,6 @@ class Main extends CI_Controller {
 		$this->new_customer();
 	}*/
 
-
-
 	//=========search customer ================================//
 
 /*=========================================================================================*/
@@ -106,7 +96,6 @@ class Main extends CI_Controller {
 
 	/*public function view_customer()
 	{
-
 			$this->load->model('Main_model');
 			$customer_id = $this->input->post('customer_id');
 			$data['fetch_data_by_customer_id'] = $this->Main_model->fetch_data_by_customer_id($customer_id);
@@ -114,7 +103,6 @@ class Main extends CI_Controller {
 			$this->load->view('Template2/Sidebar.php');
 			$this->load->view('View_customer.php',$data);
 			$this->load->view('Template2/Footer.php');
-
 
 	}*/
 /*===============================================================================================*/
@@ -128,7 +116,6 @@ class Main extends CI_Controller {
 		$this->load->model('Main_model');
 
 		/*$this->load->library('pagination'); 
-
 		 $config=[		
         'base_url' => base_url('index.php/Main/view_customer'),
         'per_page' =>2,
@@ -143,27 +130,20 @@ class Main extends CI_Controller {
         'num_tag_close' =>"<li>",
         'cur_tag_open' =>"<li class='active'><a>",
         'cur_tag_close' =>"</a></li>"
-
  		];
-
 		$this->pagination->initialize($config);
 */
 		//echo $this->pagination->create_links();
-
-
 		//$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data($config['per_page'],$this->uri->segment(3));
-		$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data();
 		//$data['pagination_links'] = $this->pagination->create_links();
-
 		/*echo"<pre";
 		print_r($data);
 		exit;*/	
-
+		$data['fetch_new_customer_data'] = $this->Main_model->fetch_new_customer_data();
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_customer.php', $data);
 		// $this->load->view('Template2/Footer.php');
-
 	}
 /*===============================================================================================*/
 
@@ -179,7 +159,6 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Edit_delete_customer.php',$data);
 	//	$this->load->view('Template2/Footer.php');
-
 	}
 /*===================================================================================================================*/
 
@@ -204,8 +183,6 @@ class Main extends CI_Controller {
 			$this->load->view('Template2/Sidebar.php');
 			$this->load->view('Edit_delete_customer.php',$data);
 			$this->load->view('Template2/Footer.php');
-
-
 	}
 */
 /*===========New Account ======================================================================================*/
@@ -273,7 +250,6 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_account.php', $data);
 		$this->load->view('Template2/Footer.php');
-
 	}*/
 
 /*================================================================================================================*/
@@ -285,7 +261,6 @@ class Main extends CI_Controller {
 		$this->load->model('Main_model');
 		
 	/*	$this->load->library('pagination'); 
-
 		 $config=[		
         'base_url' => base_url('index.php/Main/view_account'),
         'per_page' =>2,
@@ -300,25 +275,18 @@ class Main extends CI_Controller {
         'num_tag_close' =>"<li>",
         'cur_tag_open' =>"<li class='active'><a>",
         'cur_tag_close' =>"</a></li>"
-
  		];
 
-
 		$this->pagination->initialize($config);*/
-
 		//echo $this->pagination->create_links();
-
-
 		//$data['fetch_new_account_data'] = $this->Main_model->fetch_new_account_data($config['per_page'],$this->uri->segment(3));
 		//$data['pagination_links'] = $this->pagination->create_links();
 
 		$data['fetch_new_account_data'] = $this->Main_model->fetch_new_account_data();
-
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_account.php', $data);
 		//$this->load->view('Template2/Footer.php');
-
 	}
 
 /*================================================================================================================*/
@@ -333,7 +301,6 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Edit_delete_account.php', $data);
 		//$this->load->view('Template2/Footer.php');
-
 	}
 
 /*========================================================================================================================*/
@@ -353,12 +320,22 @@ class Main extends CI_Controller {
 
 	public function balance()
 	{
+		
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Sidebar.php');
+		$this->load->view('Balance.php');
+		$this->load->view('Template2/Footer.php');
+
+	}
+
+	public function view_balance()
+	{
 		$this->load->model('Main_model');
 		$account_number = $this->input->post('account_no');
 		$data['fetch_balance'] = $this->Main_model->fetch_balance($account_number);
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
-		$this->load->view('Balance.php',$data);
+		$this->load->view('Balance.php');
 		$this->load->view('Template2/Footer.php');
 
 	}
