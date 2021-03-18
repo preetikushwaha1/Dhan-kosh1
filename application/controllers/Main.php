@@ -183,6 +183,25 @@ class Main extends CI_Controller {
 /*===================================================================================================================*/
 
 
+/*=============View Customer Contact========================================*/
+		public function view_customer_contact()
+			{
+
+				$this->load->model('Main_model');
+				$customer_id = $this->input->post('customer_id');
+			
+
+				$data['fetch_data_by_customer_id'] = $this->Main_model->fetch_data_by_customer_id($customer_id);
+				$this->load->view('Template2/Header.php');
+				$this->load->view('Template2/Sidebar.php');
+				$this->load->view('Edit_delete_customer.php',$data);
+				$this->load->view('Template2/Footer.php');
+
+
+			}
+
+
+//====================================================================================//
 /*================search delete Customer===============================================================*/
 
 	/*	public function search_delete_customer()
