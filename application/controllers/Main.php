@@ -320,19 +320,27 @@ class Main extends CI_Controller {
 
 	public function balance()
 	{
-		
+		$this->load->model('Main_model');
+		$account_no = $this->input->post('account_no');
+		$data['fetch_balance'] = $this->Main_model->fetch_balance($account_no);
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Sidebar.php');
+		$this->load->view('Balance.php',$data);
+		$this->load->view('Template2/Footer.php');
+
+	}
+
+	/*public function view_balance()
+	{
+
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Balance.php');
 		$this->load->view('Template2/Footer.php');
 
-	}
 
-	public function view_balance()
-	{
-		echo "hello";
 
-	}
+	}*/
 
 /*======================================================================================================*/
 

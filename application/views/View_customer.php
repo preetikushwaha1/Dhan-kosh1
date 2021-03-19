@@ -46,17 +46,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <thead>
                   <tr class="gradeX">
                       <th>Id</th>
-                      <th>Date</th>
+                      <th>Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
                       <th>Name</th>
                       <th>Aadhar No</th>
                       <th>Pan No</th>
                       <th>Gender</th>
-                      <th>DOB</th>
+                      <th>DOB&nbsp;&nbsp;&nbsp;&nbsp;</th>
                       <th>Phone no</th>
                       <th>Email</th>
                       <th>Address</th>
                  
-s
+
                     
                     </tr>
                 </thead>

@@ -147,10 +147,10 @@ class Main_model extends CI_Model
 		//echo $this->db->last_query();
 		return $query;
 */	
-		$this->db->where('$account_number',$account_number);
+		$this->db->where('account_number',$account_number);
+		$this->db->select('*');
 		$query = $this->db->get('account_details');
 		return $query;
-		
 
 	}
 
