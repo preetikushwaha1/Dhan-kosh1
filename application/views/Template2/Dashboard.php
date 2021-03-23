@@ -11,6 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <section class="wrapper">
       <div class="row">
         <div class="col-lg-12 main-chart">
+
+          <div class="row" align="center">
+            <h1 style="font-size:50px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">Welcome <?php echo $this->session->userdata('user_name');?>!!!</h1>
+          </div>
           <!--CUSTOM CHART START -->       
           <div class="row mt">
               <!-- SERVER STATUS PANELS -->

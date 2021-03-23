@@ -5,12 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--main content start-->
   <section id="main-content">
       <section class="wrapper" >
-        <h3><!--i class="fa fa-angle-right"></i-->Add New Customer </h3>
+        <h3 style="font-size:30px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;"><!--i class="fa fa-angle-right"></i-->Add New Customer </h3>
         <!-- BASIC FORM ELELEMNTS -->
         <div class="row mt" >
           <div class="col-lg-12">
             <div class="form-panel" style="padding:40px">
-              <h4 class="mb"><!--i class="fa fa-angle-right"></i-->Add New Customer</h4>
+              <h4 class="mb" style="font-weight:600;" font-weight:800;font-family:Times New Roman; ><!--i class="fa fa-angle-right"></i-->Add New Customer</h4>
               <form class="form-horizontal style-form" method="post" name="cust_form" id="cust_form"
               action="<?php echo site_url('Main/new_customer_form_validation');?>">
 
@@ -124,8 +124,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span class="text-danger"><?php echo form_error('email');?></span>
                   </div>
                 </div>
+
+                  <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">Account No</label>
+                  <div class="col-sm-4">
+                    <input type="tel" class="form-control"  name="account_no" id="account_no">
+                    <span class="text-danger"><?php echo form_error('account_no');?></span>
+                  </div>
+             
+                  <label class="col-sm-2 col-sm-2 control-label">Opening Balance</label>
+                  <div class="col-sm-4">
+                    <input type="email" class="form-control" name="opening_balance" id="opening_balance">
+                    <span class="text-danger"><?php echo form_error('opening_balance');?></span>
+                  </div>
+                </div>
+
+
                   <button type="submit" class="btn btn-theme" name="submit" id="submit" value="Insert">Submit</button> 
-                  <button type="reset" class="btn btn-theme" name="reset" id="reset" value="Reset">Reset</button> 
+                  <button type="reset" class="btn btn-theme" name="reset" id="reset" value="Reset" style="color: red">Reset</button> 
               </form>
             </div>
           </div>
