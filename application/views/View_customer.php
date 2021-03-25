@@ -45,16 +45,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
                   <tr class="gradeX">
-                      <th>Id</th>
+                      
+                      <th>Customer id</th>
                       <th>Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
                       <th>Name</th>
-                      <th>Aadhar No</th>
-                      <th>Pan No</th>
-                      <th>Gender</th>
-                      <th>DOB&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                      <th>Phone no</th>
-                      <th>Email</th>
-                      <th>Address</th>
+                      <th>Account No</th>
+                      <th>View/Edit</th>
+                      <th>Delete</th>
+                     
                  
 
                     
@@ -64,25 +62,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <?php 
                       if($fetch_new_customer_data->num_rows() > 0)
                       {
+                        
+
                         foreach ($fetch_new_customer_data->result() as $rows){?>
                           <tr>
+                            
+                            <!--td><?php echo $i;;?></td--><!--?php $i++;?-->
                             <td name="cust_id"><?php echo $rows->customer_id;?></td>
                             <td><?php echo $rows->date;?></td>
                             <td><?php echo $rows->first_name." ".$rows->last_name;?></td>
-                            <td><?php echo $rows->aadhar_card;?></td>
-                            <td><?php echo $rows->pan_card;?></td>
-                            <td><?php echo $rows->gender;?></td>
-                            <td><?php echo $rows->dob;?></td>
-                            <td><?php echo $rows->phone_no;?></td>
-                            <td><?php echo $rows->email;?></td>
-                            <td><?php echo $rows->address."<br>".$rows->city." , ".$rows->state." , Pincode: ". $rows->pincode;?></td>
-
+                            <td><?php echo $rows->account_no;?></td>
+                            <td> <a href="<?php echo site_url('Main/view_edit_customer/'.$rows->customer_id);?>" class="text-primary fa fa-pencil-square-o" onclick="return confirm('Are you sure you want to update this?')" ></a></td>
+                            <td> <a href="<?php echo site_url('Main/delete_customer/'. $rows->customer_id);?>" class="text-danger fa fa-trash-o" onclick="return confirm('Are you sure')" name="delete_account"></a></td>
+                           
                            
                            
                           </tr>
-                          
+                       
                        <?php }
-
+                       
                       }
                       else
                       {?>

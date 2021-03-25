@@ -7,7 +7,9 @@ class Main_model extends CI_Model
 //=====add new Customer ============================================//
 	public function insert_data_new_customer($data)
 	{
-		$this->db->insert('customer_details',$data);
+		 $this->db->insert('customer_details',$data);
+
+
 		
 	}
 
@@ -25,6 +27,83 @@ class Main_model extends CI_Model
 		return $query;
 	}
 
+
+	///=====fetch view Edit customer data==================//
+	public function fetch_customer_view_edit_data($id)
+	{
+		//$this->db->limit($limit,$offset);
+		$this->db->where('customer_id',$id);
+		$query = $this->db->get('customer_details');
+
+		//echo $this->db->last_query();
+
+
+		//select * from customer_details
+		return $query;
+	}
+//============================================================//
+
+//=====update customer data==========================//
+	
+
+	public function customer_update($id)
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'required|alpha');
+		$this->form_validation->set_rules('dob' ,'Date', 'required');
+		$this->form_validation->set_rules('aadhar_no', 'Aadhar number', 'required');
+		$this->form_validation->set_rules('pan_no','Pan number', 'required');
+		$this->form_validation->set_rules('address','Address', 'required');
+		$this->form_validation->set_rules('state','State', 'required');
+		$this->form_validation->set_rules('city','City','required');
+		$this->form_validation->set_rules('pincode', 'Pincode' ,'required|numeric');
+		$this->form_validation->set_rules('phone_no','Phone Number', 'required|numeric|exact_length[10]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('account_no', 'Account Number', 'required');
+		$this->form_validation->set_rules('opening_balance', 'Opening Balance', 'required');
+		$this->form_validation->set_rules('pwd', 'Password', 'required');
+		$this->form_validation->set_rules('confirm_pwd', 'Conform Password', 'required|matches[pwd]');
+
+
+		if($this->form_validation->run())
+		{
+		$this->load->helper('date');
+		$now = date("Y-m-d H:i:s");
+		$data = array(
+					"first_name" => $this->input->post('first_name'),
+					"last_name"	 => $this->input->post('last_name'),
+					'date' 		=> $now,
+					"gender"	 => $this->input->post('gender'),
+					"dob"		 => $this->input->post('dob'),
+					"aadhar_card"=> $this->input->post('aadhar_no'),
+					"pan_card"	 => $this->input->post('pan_no'),
+					"address"	 => $this->input->post('address'),
+					"state"		 => $this->input->post('state'),
+					"city"		 => $this->input->post('city'),
+					"pincode"	 => $this->input->post('pincode'),
+					"phone_no" 	 => $this->input->post('phone_no'),
+					"email"		 => $this->input->post('email'),
+					"account_no" => $this->input->post('account_no'),
+					"opening_balance"	 => $this->input->post('opening_balance'),
+					"password"			 => $this->input->post('pwd'),
+					"confirm_password"	 => $this->input->post('confirm_pwd')
+				);	
+
+			$this->db->where('customer_id',$id);
+			$this->db->update('customer_details',$data);
+			redirect('Main/edit_delete_customer');
+
+		}
+		else
+		{
+
+			//false
+			redirect('Main/view_edit_customer');
+		}
+	}
+
+//===========================================
 
 //===============================================================//
 

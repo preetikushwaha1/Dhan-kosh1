@@ -42,7 +42,7 @@ class Main extends CI_Controller {
 		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'required|alpha');
 		$this->form_validation->set_rules('dob' ,'Date', 'required');
-		$this->form_validation->set_rules('aadhar_no', 'Aadhar number', 'required|numeric');
+		$this->form_validation->set_rules('aadhar_no', 'Aadhar number', 'required');
 		$this->form_validation->set_rules('pan_no','Pan number', 'required');
 		$this->form_validation->set_rules('address','Address', 'required');
 		$this->form_validation->set_rules('state','State', 'required');
@@ -50,6 +50,11 @@ class Main extends CI_Controller {
 		$this->form_validation->set_rules('pincode', 'Pincode' ,'required|numeric');
 		$this->form_validation->set_rules('phone_no','Phone Number', 'required|numeric|exact_length[10]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('account_no', 'Account Number', 'required');
+		$this->form_validation->set_rules('opening_balance', 'Opening Balance', 'required');
+		$this->form_validation->set_rules('pwd', 'Password', 'required');
+		$this->form_validation->set_rules('confirm_pwd', 'Conform Password', 'required|matches[pwd]');
+
 
 		if($this->form_validation->run())
 		{
@@ -70,13 +75,22 @@ class Main extends CI_Controller {
 					"city"		 => $this->input->post('city'),
 					"pincode"	 => $this->input->post('pincode'),
 					"phone_no" 	 => $this->input->post('phone_no'),
-					"email"		 => $this->input->post('email')
+					"email"		 => $this->input->post('email'),
+					"account_no" => $this->input->post('account_no'),
+					"opening_balance"	 => $this->input->post('opening_balance'),
+					"password"			 => $this->input->post('pwd'),
+					"confirm_password"	 => $this->input->post('confirm_pwd')
+
 				);
+
 			$this->Main_model->insert_data_new_customer($data);
+			 $this->session->set_flashdata('message', 'Successfully Added.');
 			redirect('Main/new_customer');
+
 		}
 		else
 		{
+
 			//false
 			$this->new_customer();
 		}
@@ -160,6 +174,43 @@ class Main extends CI_Controller {
 		$this->load->view('Edit_delete_customer.php',$data);
 	//	$this->load->view('Template2/Footer.php');
 	}
+
+
+/*-=======view Edit customer======================================*/
+
+	public function view_edit_customer()
+	{
+
+		$this->load->model('Main_model');
+		$id = $this->uri->segment(3);
+		$data['fetch_customer_view_edit_data'] = $this->Main_model->fetch_customer_view_edit_data($id);
+	
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Sidebar.php');
+		$this->load->view('View_edit_customer.php',$data);
+		$this->load->view('Template2/Footer.php');
+
+	
+	}
+
+
+	public function update_customer()
+	{
+		$this->load->model('Main_model');
+		$id = $this->uri->segment(3);
+		$data['fetch_customer_view_edit_data'] = $this->Main_model->fetch_customer_view_edit_data($id);
+		$data['customer_update'] = $this->Main_model->customer_update($id);
+
+
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Sidebar.php');
+		$this->load->view('View_edit_customer.php',$data);
+		$this->load->view('Template2/Footer.php');
+		
+	
+	}
+
+
 /*===================================================================================================================*/
 
 	public function delete_customer()
@@ -167,7 +218,7 @@ class Main extends CI_Controller {
 		$this->load->model('Main_model');
 		$customer_id=$this->uri->segment(3);
 		$this->Main_model->delete_customer_data($customer_id);
-		redirect('Main/edit_delete_account');
+		redirect('Main/view_customer');
 	}
 
 //====================================================================================//
