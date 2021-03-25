@@ -97,7 +97,6 @@ class Main_model extends CI_Model
 		}
 		else
 		{
-
 			//false
 			redirect('Main/view_edit_customer');
 		}
