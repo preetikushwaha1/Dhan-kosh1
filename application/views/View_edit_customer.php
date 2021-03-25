@@ -5,14 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--main content start-->
   <section id="main-content">
       <section class="wrapper" >
-        <h3 style="font-size:30px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;"><!--i class="fa fa-angle-right"></i-->
+        <h3 style="font-size:30px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">
         Update Customer </h3>
         <!-- BASIC FORM ELELEMNTS -->
         <div class="row mt" >
           <div class="col-lg-12">
             <div class="form-panel" style="padding:40px">
              <div class="alert alert-info">  
-              <p class="mb" style="font-weight:600;font-family:Times New Roman;font-size: 20px" ><!--i class="fa fa-angle-right"></i-->Update Customer</p>
+              <p class="mb" style="font-weight:600;font-family:Times New Roman;font-size: 20px" >Update Customer</p>
 
             </div>
 
