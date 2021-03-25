@@ -201,13 +201,11 @@ class Main extends CI_Controller {
 		$data['fetch_customer_view_edit_data'] = $this->Main_model->fetch_customer_view_edit_data($id);
 		$data['customer_update'] = $this->Main_model->customer_update($id);
 
-
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_edit_customer.php',$data);
 		$this->load->view('Template2/Footer.php');
 		
-	
 	}
 
 
