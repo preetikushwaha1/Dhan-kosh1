@@ -99,8 +99,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tbody>
               </table>
 
-                    
-
             </div><br><br><br>
           </div>
           <!-- page end-->
@@ -118,12 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
+  
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
         <a href="advanced_table.html#" class="go-top">
@@ -149,25 +142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
-      /*
-       * Insert a 'details' column to the table
-       */
-     /* var nCloneTh = document.createElement('th');
-      var nCloneTd = document.createElement('td');
-      nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-      nCloneTd.className = "center";
 
-      $('#hidden-table-info thead tr').each(function() {
-        this.insertBefore(nCloneTh, this.childNodes[0]);
-      });
-
-      $('#hidden-table-info tbody tr').each(function() {
-        this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
-      });
-*/
-      /*
-       * Initialse DataTables, with no sorting on the 'details' column
-       */
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{
           "bSortable": false,
@@ -178,10 +153,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ]
       });
 
-      /* Add event listener for opening and closing details
-       * Note that the indicator for showing which row is open is not controlled by DataTables,
-       * rather it is done here
-       */
 
     });
   </script>

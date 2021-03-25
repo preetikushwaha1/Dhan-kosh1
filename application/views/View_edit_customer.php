@@ -174,7 +174,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
 
-
                   <button type="submit" class="btn btn-theme" name="submit" id="submit" value="Insert">Update</button> 
                   <button type="reset" class="btn btn-warning " name="reset" id="reset" value="Reset" onclick="alert('Do you really want to Reset');">Reset</button> 
               </form>
