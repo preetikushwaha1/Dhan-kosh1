@@ -44,6 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th>Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
                       <th>Name</th>
                       <th>Account No</th>
+                      <th>Transactions</th>
                       <th>View/Edit</th>
                       <th>Delete</th>
    
@@ -63,8 +64,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?php echo $rows->date;?></td>
                             <td><?php echo $rows->first_name." ".$rows->last_name;?></td>
                             <td><?php echo $rows->account_no;?></td>
-                            <td> <a href="<?php echo site_url('Main/view_edit_customer/'.$rows->customer_id);?>" class="text-primary fa fa-pencil-square-o" onclick="return confirm('Are you sure you want to update this?')" ></a></td>
-                            <td> <a href="<?php echo site_url('Main/delete_customer/'. $rows->customer_id);?>" class="text-danger fa fa-trash-o" onclick="return confirm('Are you sure')" name="delete_account"></a></td>
+
+                            <td> <a href="<?php echo site_url('Main/view_transaction/'.$rows->customer_id);?>" class=" btn btn-success fa fa-file-text-o" ></a></td>
+
+                            <td> <a href="<?php echo site_url('Main/view_edit_customer/'.$rows->customer_id);?>" class=" btn btn-primary fa fa-pencil-square-o" onclick="return confirm('Are you sure you want to update this?')" ></a></td>
+
+                         
+                            <td> <a href="<?php echo site_url('Main/delete_customer/'. $rows->customer_id);?>" class="btn btn-danger fa fa-trash-o" onclick="return confirm('Are you sure')" name="delete_account"></a></td>
                            
                           </tr>
                        

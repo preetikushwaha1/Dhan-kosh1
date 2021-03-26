@@ -217,6 +217,14 @@ class Main extends CI_Controller {
 		redirect('Main/view_customer');
 	}
 
+
+
+/*======view Transaction ===============================================*/
+	public function view_transaction()
+	{
+		echo "hello";
+	}
+
 //====================================================================================//
 /*================search delete Customer===============================================================*/
 
@@ -500,6 +508,7 @@ class Main extends CI_Controller {
 							"date" 			=> date('Y-m-d')
 						);
 				$this->Main_model->insert_data_news_management($data);
+				$this->session->set_flashdata('message','Successfully Added');
 				redirect('Main/news_management');
 		}
 		else
@@ -518,7 +527,7 @@ class Main extends CI_Controller {
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_news.php', $data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 
@@ -530,7 +539,7 @@ class Main extends CI_Controller {
 		$this->load->model('Main_model');
 		$sr_no = $this->uri->segment(3);
 		$this->Main_model->delete_news($sr_no);
-		redirect('Main/news_management');
+		redirect('Main/news');
 
 
 	}

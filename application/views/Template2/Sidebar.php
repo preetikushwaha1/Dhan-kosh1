@@ -30,13 +30,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </a>
             <ul class="sub">
               <li><a href="<?php echo site_url('Main/new_customer');?>">Add New Customer</a></li>
-              <li><a href="<?php echo site_url('Main/view_customer');?>">View Customer</a></li>
-              <li><a href="<?php echo site_url('Main/Edit_delete_customer');?>">Edit/Delete Customer</a></li>
+              <li><a href="<?php echo site_url('Main/view_customer');?>">View/Edit Customer</a></li>
+              <!--li><a href="<?php echo site_url('Main/Edit_delete_customer');?>">Edit/Delete Customer</a></li-->
              
             </ul>
           </li>
 
-          <li class="sub-menu">
+          <!--li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-briefcase"></i>
               <span>Account Details</span>
@@ -47,8 +47,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <li><a href="<?php echo site_url('Main/Edit_delete_account');?>">Edit/Delete Account</a></li>
               
             </ul>
-          </li>
+          </li-->
 
+     
            <li>
             <a href="<?php echo site_url('Main/balance');?>">
               <i class="fa fa-money"></i>

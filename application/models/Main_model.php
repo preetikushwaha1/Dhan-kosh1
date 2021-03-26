@@ -73,7 +73,7 @@ class Main_model extends CI_Model
 
 			$this->db->where('customer_id',$id);
 			$this->db->update('customer_details',$data);
-		
+
 			redirect('Main/view_customer');
 
 	}
@@ -183,10 +183,17 @@ class Main_model extends CI_Model
 		//DELETE FROM news_management where sr_no= '$sr_no' 
 		$this->db->where("sr_no", $sr_no);
 		$this->db->delete("news_management");
+		$this->session->set_flashdata('message','Successfully Deleted');
 
 	}
 
 //==============================================================================//
+	public function fetch_view_edit_news()
+	{
+		$query =$this->db->query('select * from news_management ORDER BY sr_no DESC'); //select * from news_management;
+
+		return $query;
+	}
 
 
 
