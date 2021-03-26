@@ -48,26 +48,7 @@ class Main_model extends CI_Model
 
 	public function customer_update($id)
 	{
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
-		$this->form_validation->set_rules('last_name', 'Last Name', 'required|alpha');
-		$this->form_validation->set_rules('dob' ,'Date', 'required');
-		$this->form_validation->set_rules('aadhar_no', 'Aadhar number', 'required');
-		$this->form_validation->set_rules('pan_no','Pan number', 'required');
-		$this->form_validation->set_rules('address','Address', 'required');
-		$this->form_validation->set_rules('state','State', 'required');
-		$this->form_validation->set_rules('city','City','required');
-		$this->form_validation->set_rules('pincode', 'Pincode' ,'required|numeric');
-		$this->form_validation->set_rules('phone_no','Phone Number', 'required|numeric|exact_length[10]');
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('account_no', 'Account Number', 'required');
-		$this->form_validation->set_rules('opening_balance', 'Opening Balance', 'required');
-		$this->form_validation->set_rules('pwd', 'Password', 'required');
-		$this->form_validation->set_rules('confirm_pwd', 'Conform Password', 'required|matches[pwd]');
-
-
-		if($this->form_validation->run())
-		{
+		
 		$this->load->helper('date');
 		$now = date("Y-m-d H:i:s");
 		$data = array(
@@ -92,14 +73,9 @@ class Main_model extends CI_Model
 
 			$this->db->where('customer_id',$id);
 			$this->db->update('customer_details',$data);
-			redirect('Main/edit_delete_customer');
+		
+			redirect('Main/view_customer');
 
-		}
-		else
-		{
-			//false
-			redirect('Main/view_edit_customer');
-		}
 	}
 
 //===========================================

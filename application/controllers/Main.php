@@ -184,7 +184,6 @@ class Main extends CI_Controller {
 		$this->load->model('Main_model');
 		$id = $this->uri->segment(3);
 		$data['fetch_customer_view_edit_data'] = $this->Main_model->fetch_customer_view_edit_data($id);
-	
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('View_edit_customer.php',$data);
@@ -198,7 +197,6 @@ class Main extends CI_Controller {
 	{
 		$this->load->model('Main_model');
 		$id = $this->uri->segment(3);
-		$data['fetch_customer_view_edit_data'] = $this->Main_model->fetch_customer_view_edit_data($id);
 		$data['customer_update'] = $this->Main_model->customer_update($id);
 
 		$this->load->view('Template2/Header.php');

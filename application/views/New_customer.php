@@ -2,6 +2,23 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+
+    <style type="text/css">
+
+        .field-icon {
+            float: right;
+            margin-left: -20px;
+
+            margin-top: 5px;
+            position: relative;
+            z-index: 2;
+               padding: 2px 3px;
+          }
+    </style>
+
+
+
+
 <!--main content start-->
   <section id="main-content">
       <section class="wrapper" >
@@ -157,12 +174,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <label class="col-sm-2 col-sm-2 control-label">Password</label>
                   <div class="col-sm-4">
                     <input type="password" class="form-control"  name="pwd" id="pwd"  value="<?php echo set_value('pwd');?>"> 
+             
                     <span class="text-danger"><?php echo form_error('pwd');?></span>
                   </div>
              
                   <label class="col-sm-2 col-sm-2 control-label">Confirm Password</label>
                   <div class="col-sm-4">
                     <input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd"  value="<?php echo set_value('confirm_pwd');?>">
+                   
                     <span class="text-danger"><?php echo form_error('confirm_pwd');?></span>
                   </div>
                 </div>

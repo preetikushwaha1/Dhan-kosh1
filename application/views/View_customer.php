@@ -8,16 +8,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
-
-
- 
 </head>
 
 <body>
- 
     <section id="main-content">
       <section class="wrapper">
-         <h3><!--i class="fa fa-angle-right"--></i>View Customer</h3>
+         <h3></i>View Customer</h3>
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
@@ -38,9 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </form>
               <br>
 
-
           <div class="content-panel">
-
             <div class="adv-table">
               <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                 <thead>
@@ -52,10 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th>Account No</th>
                       <th>View/Edit</th>
                       <th>Delete</th>
-                     
-                 
-
-                    
+   
                     </tr>
                 </thead>
                 <tbody>
@@ -75,8 +66,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td> <a href="<?php echo site_url('Main/view_edit_customer/'.$rows->customer_id);?>" class="text-primary fa fa-pencil-square-o" onclick="return confirm('Are you sure you want to update this?')" ></a></td>
                             <td> <a href="<?php echo site_url('Main/delete_customer/'. $rows->customer_id);?>" class="text-danger fa fa-trash-o" onclick="return confirm('Are you sure')" name="delete_account"></a></td>
                            
-                           
-                           
                           </tr>
                        
                        <?php }
@@ -92,9 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                        <?php
                       }?>
                 </tbody>
-              </table>
-
-                    
+              </table>      
 
             </div><br><br><br>
           </div>
@@ -113,12 +100,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
         <a href="advanced_table.html#" class="go-top">
@@ -127,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </footer>
     <!--footer end-->
-  </section>
+</section>
   <!-- js placed at the end of the document so the pages load faster -->
 
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.js');?>"></script>
@@ -144,25 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
-      /*
-       * Insert a 'details' column to the table
-       */
-     /* var nCloneTh = document.createElement('th');
-      var nCloneTd = document.createElement('td');
-      nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-      nCloneTd.className = "center";
 
-      $('#hidden-table-info thead tr').each(function() {
-        this.insertBefore(nCloneTh, this.childNodes[0]);
-      });
-
-      $('#hidden-table-info tbody tr').each(function() {
-        this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
-      });
-*/
-      /*
-       * Initialse DataTables, with no sorting on the 'details' column
-       */
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{
           "bSortable": false,
@@ -173,11 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ]
       });
 
-      /* Add event listener for opening and closing details
-       * Note that the indicator for showing which row is open is not controlled by DataTables,
-       * rather it is done here
-       */
-
+ 
     });
   </script>
 </body>
