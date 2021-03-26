@@ -232,5 +232,13 @@ class Main_model extends CI_Model
 		$query = $this->db->get('fund_transfer');
 		return $query;
 	}
+
+//=============Get All Customer Number=====================//
+	public function get_all_customer_no()
+	{
+		$this->db->distinct('customer_id');
+		$query = $this->db->get('customer_details');
+		return $query->num_rows();
+	}
 }?>
 

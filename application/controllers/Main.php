@@ -16,9 +16,11 @@ class Main extends CI_Controller {
 	/*-==============================Dashboard========================================================================*/
 	public function index()
 	{
+		$this->load->model('Main_model');
+		$data['get_all_customer_no'] =$this->Main_model->get_all_customer_no();
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
-		$this->load->view('Template2/Dashboard.php');
+		$this->load->view('Template2/Dashboard.php',$data);
 		$this->load->view('Template2/Footer.php');
 	}
 	/*======================================================================================================*/
@@ -577,8 +579,7 @@ class Main extends CI_Controller {
 
 /*================================================================================================================*/
 
-
-
+/*=================get customer Count==================================*/
 
 
 

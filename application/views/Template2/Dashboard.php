@@ -21,11 +21,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-4 col-sm-4 mb">
               <div class="grey-panel pn donut-chart">
                 <div class="grey-header">
-                  <h5>TOTAL USER ACCOUNT</h5>
+                  <h5 style="font-size: 25px;"><b>TOTAL CUSTOMER</b></h5>
                 </div>
                 
                   <div class="row">
-                      <h2>21%</h2>  
+                      <h2 style="font-size:50px"><?php echo $get_all_customer_no;?></h2>  
                   </div>
               </div>  
             </div><!-- /grey-panel -->
