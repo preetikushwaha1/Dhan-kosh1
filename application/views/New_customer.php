@@ -174,7 +174,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <label class="col-sm-2 col-sm-2 control-label">Password</label>
                   <div class="col-sm-4">
                     <input type="password" class="form-control"  name="pwd" id="pwd"  value="<?php echo set_value('pwd');?>"> 
-             
+              
                     <span class="text-danger"><?php echo form_error('pwd');?></span>
                   </div>
              
