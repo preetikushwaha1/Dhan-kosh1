@@ -33,12 +33,12 @@ class Login_model extends CI_Model
 /*========User Login ============================================*/
  	public function user_login_correctly($account_num,$password)
  	{
- 		$this->db->where('account_number',$account_num);
+ 		$this->db->where('account_no',$account_num);
  		$this->db->where('password',$password);
- 		$query = $this->db->get('account_details');
+ 		$query = $this->db->get('customer_details');
 
- 		/*echo "<pre>";
- 		print_r($query->row());*/
+ 		echo "<pre>";
+ 		print_r($query->row());
 
  		if($query->num_rows() > 0)
  		{

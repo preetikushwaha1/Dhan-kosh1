@@ -104,7 +104,7 @@ class Login extends CI_Controller {
  				$this->load->library('session');
 
  				$this->session->set_userdata('customer_id',$user_data_row->customer_id);
- 				$this->session->set_userdata('account_number',$user_data_row->account_number);
+ 				$this->session->set_userdata('account_number',$user_data_row->account_no);
  				redirect('Main_customer');
  			}
  			else
