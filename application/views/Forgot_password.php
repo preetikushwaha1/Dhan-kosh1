@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Dhan_kosh</title>
 
   <!-- Favicons -->
   <link href="<?php echo base_url('assets2/img/favicon.png');?>" rel="icon">
@@ -68,15 +68,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <div id="login-page" style="padding-bottom: 80px; padding-top: 50px;">
     <div class="container">
-      <form class="form-login" action="index.html">
+
+      <form class="form-login" action="<?php echo site_url('Forgot_password');?>" method="post">
+
         <h2 class="form-login-heading">Forgot Password?</h2>
         <div class="login-wrap">
-	          <input type="text" class="form-control" placeholder="User ID" autofocus>
+
+                      <?php if($this->session->flashdata('success')){?>
+                      <div class="alert alert-success">      
+                        <?php echo $this->session->flashdata('success')?>
+                      </div>
+                    <?php } ?>
+            <br>  
+	          <input type="text" class="form-control" placeholder="Username" autofocus name="username" id="username">
+            <span class="text-danger"><?php echo form_error('username');?></span>
 	          <br>
-	          <input type="password" class="form-control" placeholder="Password">
+	          <input type="password" class="form-control" placeholder="New Password" name="new_password" id="new_password">
+              <span class="text-danger"><?php echo form_error('new_password');?></span>
 	          <br>
-            <input type="password" class="form-control" placeholder="Password">
-	   
+            <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password">
+              <span class="text-danger"><?php echo form_error('confirm_password');?></span>
 	          <br>
 	          <button class="btn btn-theme btn-block" href="index.html" type="submit">Reset Password</button>
 	       

@@ -125,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                   <input type="checkbox" value="remember-me"> Remember me
                   <span class="pull-right">
-                     <a data-toggle="modal" href="<?php echo site_url('Forgot_password');?>"> Forgot Password?</a>
+                     <a data-toggle="modal" href="<?php echo site_url('');?>"> Forgot Password?</a>
                   </span>
                 </label>
                 <br>
