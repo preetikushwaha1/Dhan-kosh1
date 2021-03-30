@@ -92,12 +92,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </a>
           </li>
 
-          <li>
+          <!--li>
             <a href="<?php echo site_url('Main/profile');?>">
               <i class="fa fa-user"></i>
               <span>Profile</span>
               </a>
-          </li>
+          </li-->
 
 
           <li>
@@ -108,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </li>
 
           <li>
-            <a href="google_maps.html">
+            <a href="<?php echo site_url('Change_password');?>">
               <i class="fa fa-cogs"></i>
               <span>Change Password</span>
               </a>
