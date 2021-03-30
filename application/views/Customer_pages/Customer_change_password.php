@@ -4,14 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
   
     <div id="login-page">
     <div class="container" style="padding:80px">
 
-      <form class="form-login" action="<?php echo site_url('change_password');?>" method="post">
+      <form class="form-login" action="<?php echo site_url('Customer_change_pwd');?>" method="post">
 
         <h2 class="form-login-heading">sign in now</h2>
         <div class="login-wrap">

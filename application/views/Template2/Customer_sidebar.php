@@ -107,7 +107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </li>
 
           <li>
-            <a href="google_maps.html">
+            <a href="<?php echo site_url('Customer_change_pwd');?>">
               <i class="fa fa-cogs"></i>
               <span>Change Password</span>
               </a>
