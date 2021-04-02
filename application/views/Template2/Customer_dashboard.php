@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="row text-justify" >
                      <h3>&nbsp;&nbsp; &nbsp;&#9656 Balance (INR):<h3>
                       <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have </h3>
-                      <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 Your last transaction </h3>  
+                      <h3>&nbsp;&nbsp;&nbsp; &#9656 Your last transaction </h3>  
                   </div>
               </div>  
             </div><!-- /grey-panel -->
