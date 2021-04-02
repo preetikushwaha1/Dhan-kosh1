@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="<?php echo base_url('assets2/img/ui-sam.jpg');?>" class="img-circle" width="80"></a></p>
-          <h5 class="centered"style=" font-variant: small-caps; font-size: 20px;">Acc no-<?php echo $this->session->userdata('account_number');?></h5>
+          <h5 class="centered"style=" font-variant: small-caps; font-size: 20px;">Ac/No: <?php echo $this->session->userdata('account_number');?></h5>
 
           <li class="mt">
             <a class="active" href="<?php echo site_url('Main_customer');?>">
