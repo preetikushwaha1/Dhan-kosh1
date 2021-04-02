@@ -105,6 +105,8 @@ class Login extends CI_Controller {
 
  				$this->session->set_userdata('customer_id',$user_data_row->customer_id);
  				$this->session->set_userdata('account_number',$user_data_row->account_no);
+ 				$this->session->set_userdata('first_name',$user_data_row->first_name);
+ 				$this->session->set_userdata('last_name',$user_data_row->last_name);
  				redirect('Main_customer');
  			}
  			else
