@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <form class="form-login" action="<?php echo site_url('change_password');?>" method="post">
 
-        <h2 class="form-login-heading">sign in now</h2>
+        <h2 class="form-login-heading">Change Password</h2>
         <div class="login-wrap">
 
               <?php if($this->session->flashdata('success')){?>
