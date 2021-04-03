@@ -98,7 +98,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--footer end-->
 </section>
   <!-- js placed at the end of the document so the pages load faster -->
-
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.js');?>"></script>
   <script src="<?php echo base_url('assets2/lib/bootstrap/js/bootstrap.min.js');?>"></script>
   <script class="include" type="text/javascript" src="<?php echo base_url('assets2/lib/jquery.dcjqaccordion.2.7.js');?>"></script>
