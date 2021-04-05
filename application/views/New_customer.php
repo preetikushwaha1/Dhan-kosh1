@@ -45,9 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                   <?php if($this->session->flashdata('message')){?>
                     <div class="alert alert-success">      
-                      <?php echo $this->session->flashdata('message')?><br>
-                        <?php echo $this->session->flashdata('passbook')?>
-
+                        <?php echo $this->session->flashdata('message')?><br>
+                        <?php echo $this->session->flashdata('passbook_created')?>
+                        <?php echo $this->session->flashdata('passbook_updated')?>
                     </div>
                   <?php } ?>
 

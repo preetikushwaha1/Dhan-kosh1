@@ -157,8 +157,8 @@ class Main extends CI_Controller {
 				$this->Main_model->insert_data_into_passwork($data,$id);
 
 				$this->session->set_flashdata('message', 'Data Successfully Added.');
-				$this->session->set_flashdata('passbook', 'Passbook Created Successfully .');
-				$this->session->set_flashdata('passbook', 'Passbook Updated Successfully .');
+				$this->session->set_flashdata('passbook_created', 'Passbook Created Successfully .');
+				$this->session->set_flashdata('passbook_updated', 'Passbook Updated Successfully .');
 
 		
 			redirect('Main/new_customer');
