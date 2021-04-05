@@ -298,7 +298,15 @@ class Main extends CI_Controller {
 /*======view Transaction ===============================================*/
 	public function view_transaction()
 	{
-		echo "hello";
+		//echo "hello";
+		$this->load->model('Main_model');
+		$customer_id = $this->uri->segment(3);
+		$data['fetch_view_transaction'] = $this->Main_model->fetch_view_transaction($customer_id);
+
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Sidebar.php');
+		$this->load->view('View_transactions.php',$data);
+
 	}
 
 //====================================================================================//

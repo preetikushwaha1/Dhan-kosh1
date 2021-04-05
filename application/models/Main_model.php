@@ -165,8 +165,19 @@ class Main_model extends CI_Model
 		$this->db->where('customer_id',$customer_id);
 		$this->db->delete('account_details');
 	}
-//====
-//=========================================================================//
+//========================================================================//
+
+
+//==fetch Transaction by customer id=====================================//
+	public function fetch_view_transaction($customer_id)
+	{
+		
+		$query=$this->db->get('passbook'.$customer_id);
+		return $query;
+
+
+	}
+
 
 
 //======= insert news ====================================================//
