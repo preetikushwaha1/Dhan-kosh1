@@ -55,7 +55,7 @@ class Main extends CI_Controller {
 		$this->form_validation->set_rules('pincode', 'Pincode' ,'required|numeric');
 		$this->form_validation->set_rules('phone_no','Phone Number', 'required|numeric|exact_length[10]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('account_no', 'Account Number', 'required');
+		$this->form_validation->set_rules('account_no', 'Account Number', 'required|is_unique[customer_details.account_no]');
 		$this->form_validation->set_rules('opening_balance', 'Opening Balance', 'required');
 		$this->form_validation->set_rules('pwd', 'Password', 'required');
 		$this->form_validation->set_rules('confirm_pwd', 'Conform Password', 'required|matches[pwd]');
@@ -106,7 +106,7 @@ class Main extends CI_Controller {
 
 			// switch over to Library DB
 			$this->load->dbforge();
-			$query=$this->db->query('use dhankosh');//using database dhankosh
+			$Use_database=$this->db->query('use dhankosh');//using database dhankosh
 		
 				// define table fields
 				$fields = array(
@@ -146,8 +146,20 @@ class Main extends CI_Controller {
 				// create table
 				$this->dbforge->create_table('passbook'.$id);
 
-				$this->session->set_flashdata('message', 'Successfully Added.');
+				$data = array(
+							"trans_date" => $now,
+							"remarks"    => "Opening Balance",
+							"debit"		=>	0,
+							"credit"   => $this->input->post('opening_balance'),
+							"balance"  =>$this->input->post('opening_balance')
+				);
+
+				$this->Main_model->insert_data_into_passwork($data,$id);
+
+				$this->session->set_flashdata('message', 'Data Successfully Added.');
 				$this->session->set_flashdata('passbook', 'Passbook Created Successfully .');
+				$this->session->set_flashdata('passbook', 'Passbook Updated Successfully .');
+
 		
 			redirect('Main/new_customer');
 

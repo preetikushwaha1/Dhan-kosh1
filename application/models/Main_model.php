@@ -8,10 +8,18 @@ class Main_model extends CI_Model
 	public function insert_data_new_customer($data)
 	{
 		 $this->db->insert('customer_details',$data);
-
-
-		
+	
 	}
+
+//=====insert into passbook ============================================//
+	public function insert_data_into_passwork($data,$id)
+	{
+		 $this->db->insert('passbook'.$id ,$data);
+	
+	}
+
+
+
 
 	//==fetch new customer data=====================================//
 	public function fetch_new_customer_data()
