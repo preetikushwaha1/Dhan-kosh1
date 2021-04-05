@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--main content start-->
   <section id="main-content">
       <section class="wrapper" >
-        <h3 style="font-size:30px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;"><!--i class="fa fa-angle-right"></i-->Add New Customer </h3>
+        <h3 style="font-size:30px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">Add New Customer </h3>
         <!-- BASIC FORM ELELEMNTS -->
         <div class="row mt" >
           <div class="col-lg-12">
@@ -45,7 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                   <?php if($this->session->flashdata('message')){?>
                     <div class="alert alert-success">      
-                      <?php echo $this->session->flashdata('message')?>
+                      <?php echo $this->session->flashdata('message')?><br>
+                        <?php echo $this->session->flashdata('passbook')?>
+
                     </div>
                   <?php } ?>
 

@@ -240,5 +240,13 @@ class Main_model extends CI_Model
 		$query = $this->db->get('customer_details');
 		return $query->num_rows();
 	}
+
+//=============Get All Active Account Number=====================//
+	public function get_all_active_account()
+	{
+		$this->db->distinct('account_no');
+		$query = $this->db->get('customer_details');
+		return $query->num_rows();
+	}
 }?>
 

@@ -16,8 +16,10 @@ class Main extends CI_Controller {
 	/*-==============================Dashboard========================================================================*/
 	public function index()
 	{
+
 		$this->load->model('Main_model');
 		$data['get_all_customer_no'] =$this->Main_model->get_all_customer_no();
+		$data['get_all_active_account'] =$this->Main_model->get_all_active_account();
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Sidebar.php');
 		$this->load->view('Template2/Dashboard.php',$data);
@@ -39,6 +41,7 @@ class Main extends CI_Controller {
 	//---Form validation of add new customer---//
 	public function new_customer_form_validation()
 	{
+			
 		//echo 'ok';
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
@@ -86,7 +89,66 @@ class Main extends CI_Controller {
 				);
 
 			$this->Main_model->insert_data_new_customer($data);
-			 $this->session->set_flashdata('message', 'Successfully Added.');
+
+			//$query1 = $this->db->query('SELECT Max(customer_id) FROM customer_details');
+			//echo $query1->num_rows();
+			
+			/*echo "<pre>";
+			print_r($query1->row());
+			exit;*/
+
+			$this->db->select_max('customer_id');
+			$query1 = $this->db->get('customer_details');
+					
+		
+	    	$id = $query1->row()->customer_id;  //customer_id
+	
+
+			// switch over to Library DB
+			$this->load->dbforge();
+			$query=$this->db->query('use dhankosh');//using database dhankosh
+		
+				// define table fields
+				$fields = array(
+				  'trans_id' => array(
+							    'type' => 'INT',
+							    'constraint' => 9,
+							    'auto_increment' => TRUE
+				 				 ),
+
+				  'trans_date' => array(
+				    			'type' => 'datetime',
+				 				 ),
+				  'remarks' => array(
+						   		'type' => 'VARCHAR',
+						    	'constraint' => 255
+				 				 ),
+				  'debit' => array(
+				   				'type' => 'INT',
+				    			'constraint' => 11,
+				    			
+				 				 ),
+				  'credit' => array(
+				    				'type' => 'INT',
+				    				'constraint' => 11
+				 				 ),
+				  'balance' => array(
+				  					'type' =>'INT',
+				  					 'constraint' => 11
+				  				)
+				 );
+
+				$this->dbforge->add_field($fields);
+
+				// define primary key
+				$this->dbforge->add_key('trans_id', TRUE);
+
+				// create table
+				$this->dbforge->create_table('passbook'.$id);
+
+				$this->session->set_flashdata('message', 'Successfully Added.');
+				$this->session->set_flashdata('passbook', 'Passbook Created Successfully .');
+		
 			redirect('Main/new_customer');
 
 		}
