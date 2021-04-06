@@ -16,6 +16,19 @@ class Main_customer_model extends CI_Model
 
 	}
 
+//====customer dashboard Details====================================//
+	public function customer_dashboard_details($customer_id)
+	{
+		$query= $this->db->query('select * from passbook31 where trans_id=(select Max(trans_id) from passbook31)');
+		return $query;
+		//echo $this->db->last_query();				
+		
+		/*echo "<pre>";
+		print_r($query->row());
+		exit;*/
+
+	}
+
 
 //==fetch data By Account Number=====================================//
 	public function fetch_data_by_account_no($account_number)
@@ -86,6 +99,7 @@ class Main_customer_model extends CI_Model
 
 		return $query;
 	}
+
 
 
 }

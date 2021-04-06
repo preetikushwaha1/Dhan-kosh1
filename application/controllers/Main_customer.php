@@ -7,10 +7,12 @@ class Main_customer extends CI_Controller {
 	/*-==============================Dashboard========================================================================*/
 	public function index()
 	{
-
+		$this->load->model('Main_customer_model');
+		$customer_id = $this->session->userdata('customer_id');
+		$data['customer_dashboard_details'] = $this->Main_customer_model->customer_dashboard_details($customer_id);
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
-		$this->load->view('Template2/Customer_dashboard.php');
+		$this->load->view('Template2/Customer_dashboard.php',$data);
 		$this->load->view('Template2/Footer.php');
 
 

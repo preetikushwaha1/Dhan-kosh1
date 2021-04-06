@@ -12,8 +12,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="row">
         <div class="col-lg-12 main-chart">
             <div class="row" align="center">
-            <h1 style="font-size:50px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">Welcome <?php echo $this->session->userdata('first_name');?> <?php echo $this->session->userdata('last_name');?>!!!</h1>
-            <h1 style="font-size:30px;color:#000000; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">AC/No:<?php echo $this->session->userdata('account_number');?></h1>
+            <h1 style="font-size:50px;color:#FF6347; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">
+              Welcome <?php echo $this->session->userdata('first_name');?> <?php echo $this->session->userdata('last_name');?>!!!
+            </h1>
+
+            <h1 style="font-size:30px;color:#000000; font-weight:800;font-family:Times New Roman; font-variant: small-caps;">
+               AC/No:<?php echo $this->session->userdata('account_number');?>
+              </h1>
 
           </div>
           <!--CUSTOM CHART START -->       
@@ -25,11 +30,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <h4 style="color: #000000"><b>Account Details</b></h4>
                 </div>
                 
-                  <div class="row text-justify" >
-                     <h3>&nbsp;&nbsp; &nbsp;&#9656 Balance (INR):<h3>
-                      <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have </h3>
-                      <h3>&nbsp;&nbsp;&nbsp; &#9656 Your last transaction </h3>  
-                  </div>
+                <?php 
+                if($customer_dashboard_details->num_rows()>0)
+                {
+                   foreach ($customer_dashboard_details->result() as $rows){?>
+
+                      <div class="row text-justify" >
+                         <h3>&nbsp;&nbsp; &nbsp;&#9656 Balance (INR):<?php echo $rows->balance;?><h3>
+                          <?php if($rows->debit == 0)
+                          {
+                            $transaction = $rows->credit;
+                            $type = "Credit";
+                          }
+                          else
+                          {
+                            $transaction = $row->debit;
+                            $type = "Debit";
+
+                          }?>
+                          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have</h3>
+                          <h3>&nbsp;&nbsp;&nbsp; &#9656 Your last transaction <?php echo "(". $type.") of "." Rs ". $transaction ;?></h3>  
+                      </div>
+                    <?php }
+                       
+                      }
+                      else
+                      {?>
+                          <tr>
+                            <td  colspan="10">No Data Found
+                            </td>
+                          </tr>
+
+                       <?php
+                      }?>
               </div>  
             </div><!-- /grey-panel -->
 
