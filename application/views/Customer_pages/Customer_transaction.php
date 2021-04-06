@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?php echo $sanitized_time;?></td>
                             <td><?php echo $rows->remarks;?></td>
                             <td><?php echo "<span style='color:  #ed5565'><b> ". $rows->debit ."</b></span>" ;?></td>
-                            <td><?php echo "<span style='color:  #2E8B57'><b> ". $rows->credit ."</b></span>"; ?></td>
+                            <td><?php echo "<span style='color:  #4CAF50'><b> ". $rows->credit ."</b></span>"; ?></td>
                             <td><?php echo $rows->balance;?></td> 
                           </tr>
                        

@@ -65,8 +65,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td name="cust_id"><?php echo $rows->trans_id;?></td>
                             <td><?php echo $sanitized_time;?></td>
                             <td><?php echo $rows->remarks;?></td>
-                            <td><?php echo $rows->debit;?></td>
-                            <td><?php echo $rows->credit;?></td>
+                            <td><?php echo "<span style='color:  #ed5565'><b> ". $rows->debit ."</b></span>" ;?></td>
+                            <td><?php echo "<span style='color:  #4CAF50'><b> ". $rows->credit ."</b></span>" ;?></td>
                             <td><?php echo $rows->balance;?></td> 
                           </tr>
                        

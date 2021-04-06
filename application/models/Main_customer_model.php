@@ -19,15 +19,27 @@ class Main_customer_model extends CI_Model
 //====customer dashboard Details====================================//
 	public function customer_dashboard_details($customer_id)
 	{
-		$query= $this->db->query('select * from passbook31 where trans_id=(select Max(trans_id) from passbook31)');
+		$query = $this->db->query('select * from passbook'.$customer_id. ' where trans_id=(select Max(trans_id) from passbook'.$customer_id.")");
 		return $query;
 		//echo $this->db->last_query();				
 		
 		/*echo "<pre>";
 		print_r($query->row());
 		exit;*/
-
 	}
+
+//====customer beneficiary details =======================================//
+	public function beneficiary($customer_id)
+	{
+		$query = $this->db->query('select count(*) from beneficiary'.$customer_id);
+		/*echo $this->db->last_query();
+		exit;*/
+
+		//$result=$query->row_array();
+		return $query;
+		
+		
+	} 
 
 //===================================================================//
 

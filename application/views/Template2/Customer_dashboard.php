@@ -37,12 +37,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                       <div class="row text-justify" style="color:#000000" >
                          <h3>&nbsp;&nbsp; &nbsp;&#9656 Balance (INR): <?php echo "<b>".$rows->balance ."</b>";?><h3>
-                          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have</h3>
+                          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have <?php  $res=$beneficiary->row_array() ?>
+                                                                      <?php  echo "<b>".$res['count(*)'] ."</b>";?> beneficiaries.</h3>
 
                            <?php if($rows->debit == 0)
                           {
                             $transaction = $rows->credit;
-                            $type = "<span style='color:  #2E8B57'><b> (Credit) </b></span>";
+                            $type = "<span style='color:  #4CAF50'><b> (Credit) </b></span>";
                           }
                           else
                           {
