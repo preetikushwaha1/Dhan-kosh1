@@ -35,21 +35,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 {
                    foreach ($customer_dashboard_details->result() as $rows){?>
 
-                      <div class="row text-justify" >
-                         <h3>&nbsp;&nbsp; &nbsp;&#9656 Balance (INR):<?php echo $rows->balance;?><h3>
-                          <?php if($rows->debit == 0)
+                      <div class="row text-justify" style="color:#000000" >
+                         <h3>&nbsp;&nbsp; &nbsp;&#9656 Balance (INR): <?php echo "<b>".$rows->balance ."</b>";?><h3>
+                          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have</h3>
+
+                           <?php if($rows->debit == 0)
                           {
                             $transaction = $rows->credit;
-                            $type = "Credit";
+                            $type = "<span style='color:  #2E8B57'><b> (Credit) </b></span>";
                           }
                           else
                           {
                             $transaction = $row->debit;
-                            $type = "Debit";
+                            $type = "<span style='color:  #ed5565'><b> (Debit) </b></span>";
 
                           }?>
-                          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&#9656 You have</h3>
-                          <h3>&nbsp;&nbsp;&nbsp; &#9656 Your last transaction <?php echo "(". $type.") of "." Rs ". $transaction ;?></h3>  
+                            <?php  $time=strtotime($rows->trans_date);
+                            $sanitized_time = date("d/m/Y, g:i A", $time);?>
+
+                          <h3>&nbsp;&nbsp;&nbsp; &#9656 Your last transaction 
+                            <?php echo $type.
+                            "of "."<b> Rs. ". $transaction ."</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On ". $sanitized_time .", was ".
+                            ' " ' .$rows->remarks .' " ' ;?></h3>  
                       </div>
                     <?php }
                        
