@@ -55,6 +55,21 @@ class Main_customer extends CI_Controller {
 /*================================================================================================================*/
 
 
+/*=================Transaction====================================================*/
+
+	public function customer_transaction()
+	{
+		$this->load->model('Main_model');
+		$customer_id = $this->session->userdata('customer_id');
+		$data['fetch_view_transaction'] = $this->Main_model->fetch_view_transaction($customer_id);
+
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Customer_sidebar.php');
+		$this->load->view('Customer_pages/Customer_transaction.php',$data);
+		
+
+	}
+
 /*=============Balance ================================================================================*/
 
 	public function balance()

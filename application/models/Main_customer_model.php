@@ -29,6 +29,19 @@ class Main_customer_model extends CI_Model
 
 	}
 
+//===================================================================//
+
+
+//==fetch Transaction by customer id=====================================//
+	public function fetch_view_transaction($customer_id)
+	{
+		
+		$query=$this->db->get('passbook'.$customer_id);
+		return $query;
+
+
+	}
+//=========================================================//
 
 //==fetch data By Account Number=====================================//
 	public function fetch_data_by_account_no($account_number)

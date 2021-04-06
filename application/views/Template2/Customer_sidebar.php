@@ -56,6 +56,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </a>
           </li>
 
+           <li>
+            <a href="<?php echo site_url('Main_customer/customer_transaction');?>">
+              <i class="fa fa-money"></i>
+              <span>Transaction</span>
+              </a>
+          </li>
+
+
           <li>
             <a href="<?php echo site_url('Main_customer/fund_transfer');?>">
               <i class="fa fa-money"></i>

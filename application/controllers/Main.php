@@ -108,8 +108,8 @@ class Main extends CI_Controller {
 			$this->load->dbforge();
 			$Use_database=$this->db->query('use dhankosh');//using database dhankosh
 		
-				// define table fields
-				$fields = array(
+				// define table fields of passbook
+				$fields1 = array(
 				  'trans_id' => array(
 							    'type' => 'INT',
 							    'constraint' => 9,
@@ -138,12 +138,11 @@ class Main extends CI_Controller {
 				  				)
 				 );
 
-				$this->dbforge->add_field($fields);
-
+				$this->dbforge->add_field($fields1);
 				// define primary key
 				$this->dbforge->add_key('trans_id', TRUE);
 
-				// create table
+				// create table passbook
 				$this->dbforge->create_table('passbook'.$id);
 
 				$data = array(
@@ -156,9 +155,60 @@ class Main extends CI_Controller {
 
 				$this->Main_model->insert_data_into_passwork($data,$id);
 
+
+
+
+
+
+				$this->load->dbforge();
+				$Use_database=$this->db->query('use dhankosh');//using database dhankosh
+		
+				// define table fields  of beneficiary
+				$fields2 = array(
+				  'benef_id' => array(
+							    'type' => 'INT',
+							    'constraint' => 9,
+							    'auto_increment' => TRUE
+				 				 ),
+
+				  'benef_cust_id' => array(
+				    			'type' => 'INT',
+				    			'constraint' => 11,
+				    			'unique' => TRUE
+				 				 ),
+				  'email' => array(
+						   		'type' => 'VARCHAR',
+						    	'constraint' => 30,
+						    	'unique' => TRUE
+				 				 ),
+				  'phone_no' => array(
+				   				'type' => 'VARCHAR',
+				    			'constraint' => 20,
+				    			'unique' => TRUE
+				    			
+				 				 ),
+				  'account_no' => array(
+				    				'type' => 'INT',
+				    				'constraint' => 11,
+				    				'unique' => TRUE
+				 				 ),
+				  
+				 );
+
+				$this->dbforge->add_field($fields2);
+				// define primary key
+				$this->dbforge->add_key('benef_id', TRUE);
+
+			
+				// create table Beneficiary
+				$this->dbforge->create_table('beneficiary'.$id);
+
+
+		
 				$this->session->set_flashdata('message', 'Data Successfully Added.');
-				$this->session->set_flashdata('passbook_created', 'Passbook Created Successfully .');
-				$this->session->set_flashdata('passbook_updated', 'Passbook Updated Successfully .');
+				$this->session->set_flashdata('passbook_created', 'Passbook Created Successfully !.');
+				$this->session->set_flashdata('passbook_updated', 'Passbook Updated Successfully !.');
+				$this->session->set_flashdata('beneficiary_created', 'Beneficiary created successfully !.');
 
 		
 			redirect('Main/new_customer');
