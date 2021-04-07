@@ -41,24 +41,14 @@ class Main_customer_model extends CI_Model
 
 
 //======Insert Beneficiary Details =========================================//
-	public function insert_beneficiary_data($customer_id, $first_name, $last_name,$account_no, $email,$phone_no)
+
+	public function insert_data_into_beneficiary($data,$beneficiary_id)
 	{
-		$data = array (
-			'first_name' => $first_name,
-			'last_name'  => $last_name,
-			'account_no' => $account_no,
-			'email'		=> $email,
-			'phone_no' 	=> $phone_no
-		);
-		$this->db->select('customer_id',$customer_id);
-		$this->db->where($data);
-		$query = $this->db->get('customer_details');
-		echo "<pre>";
-		print_r($query->row());
-		exit;
-
-
+		$this->db->insert('beneficiary'.$beneficiary_id,$data);
 	}
+
+//=======Fetch Benwficiary Details ==================================//
+
 
 //===================================================================//
 

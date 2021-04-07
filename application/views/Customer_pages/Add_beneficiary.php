@@ -13,7 +13,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <h4 class="mb">Fill Beneficiary Details</h4>
               <form class="form-horizontal style-form" method="post" name="add_beneficiary_forms" id="add_beneficiary_forms" 
               action="<?php echo site_url('Main_customer/beneficiary_validation');?>" >
-          
+
+                 <?php if($this->session->flashdata('success_message')){?>
+                    <div class="alert alert-success">      
+                        <?php echo $this->session->flashdata('success_message')?><br>
+                    
+                    </div>
+                  <?php } ?>
+
+               
+
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">First Name :</label>
                   <div class="col-sm-4">

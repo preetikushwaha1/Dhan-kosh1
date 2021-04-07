@@ -138,17 +138,53 @@ class Main_customer extends CI_Controller {
 			$email	      = $this->input->post('email');
 			$phone_no     = $this->input->post('phone_no');
 					
-			$this->Main_customer_model->insert_beneficiary_data($customer_id, $first_name, $last_name,$account_no,$email,$phone_no );
-			redirect('Main_customer/add_beneficiary');
+			$data = array (
+			'first_name' => $first_name,
+			'last_name'  => $last_name,
+			'account_no' => $account_no,
+			'email'		=> $email,
+			'phone_no' 	=> $phone_no
+			);
 
+			$this->db->select('customer_id',$customer_id);
+			$this->db->where($data);
+			$query = $this->db->get('customer_details');
+
+		
+			if($query->num_rows() > 0)
+			{
+				$beneficiary_id = $query->row()->customer_id;
+				if( $customer_id != $beneficiary_id)
+				{
+						$data = array(
+							"benef_cust_id" => $beneficiary_id,
+							"email"    		=> $email,
+							"phone_no"		=> $phone_no,
+							"account_no"    => $account_no
+					
+				);
+
+				$this->Main_customer_model->insert_data_into_beneficiary($data, $beneficiary_id);
+				
+				}
+				
+			else {
+           			$this->add_beneficiary();
+           			$this->session->set_flashdata('error','Please Try again!! , Invalid data Enter');
+        		}
+			}
+
+
+
+			$this->session->set_flashdata('success_message', "Beneficiary Added Successfully");
+			redirect('Main_customer/add_beneficiary');
 
 		}
 		else
 		{
 			$this->add_beneficiary();
+			$this->session->set_flashdata('error_message', "Invalid Data Enter");
 		}
-		
-
 
 	}
 
