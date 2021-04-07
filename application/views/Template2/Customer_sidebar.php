@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
           <li>
-            <a href="<?php echo site_url('Main_customer/fund_transfer');?>">
+            <a href="<?php echo site_url('Main_customer/Beneficiary');?>">
               <i class="fa fa-money"></i>
               <span>Fund Transfer</span>
               </a>

@@ -89,17 +89,44 @@ class Main_customer extends CI_Controller {
 /*======================================================================================================*/
 
 
+
+/*============= add Beneficiary ========================================================================================================*/
+
+	public function Beneficiary()
+	{
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Customer_sidebar.php');
+		$this->load->view('Customer_pages/Beneficiary.php');
+		$this->load->view('Template2/Footer.php');
+
+	}
+
+/*================================================================================================================*/
+
+
+
 /*=============Fund Transfer ========================================================================*/
 
-	public function fund_transfer()
+	public function add_beneficiary()
 	{
 	
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
-		$this->load->view('Customer_pages/Fund_transfer.php');
+		$this->load->view('Customer_pages/Add_beneficiary.php');
 		$this->load->view('Template2/Footer.php');
 
 	}
+
+/*========Beneficiary Validation =========================================================*/
+
+	public function beneficiary_validation()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('first_name', 'First Name', 'Required');
+		
+	}
+
+/*==================================================================================*/
 
 /*=======funf Form Validation===========================================================*/
 	
@@ -209,6 +236,8 @@ class Main_customer extends CI_Controller {
 	}
 
 /*================================================================================================================*/
+
+
 
 
 }
