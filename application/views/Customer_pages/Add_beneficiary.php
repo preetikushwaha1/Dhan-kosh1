@@ -11,13 +11,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="col-lg-12">
             <div class="form-panel" style="padding:40px">
               <h4 class="mb">Fill Beneficiary Details</h4>
-              <form class="form-horizontal style-form" method="post" name="fund_form" id="fund_form" 
+              <form class="form-horizontal style-form" method="post" name="add_beneficiary_forms" id="add_beneficiary_forms" 
               action="<?php echo site_url('Main_customer/beneficiary_validation');?>" >
           
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">First Name :</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="first_name" id="first_name">
+                    <input type="text" class="form-control" name="first_name" id="first_name" value="<?php echo set_value('first_name');?>">
                     <span class="text-danger"><?php echo form_error('first_name');?></span>
                   </div>
                 </div>
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Last Name :</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="last_name" id="last_name">
+                    <input type="text" class="form-control" name="last_name" id="last_name"  value="<?php echo set_value('last_name');?>">
                     <span class="text-danger"><?php echo form_error('last_name');?></span>
                   </div>
                 </div>
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Account number :</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="account_no" id="account_no">
+                    <input type="text" class="form-control" name="account_no" id="account_no"  value="<?php echo set_value('account_no');?>">
                     <span class="text-danger"><?php echo form_error('account_no');?></span>
                   </div>
                 </div>
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Email :</label>
                   <div class="col-sm-4">
-                    <input type="email" class="form-control" name="email" id="email">
+                    <input type="email" class="form-control" name="email" id="email"  value="<?php echo set_value('email');?>">
                     <span class="text-danger"><?php echo form_error('email');?></span>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Phone Number</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="phone_no" id="phone_no">
+                    <input type="text" class="form-control" name="phone_no" id="phone_no"  value="<?php echo set_value('phone_no');?>">
                     <span class="text-danger"><?php echo form_error('phone_no');?></span>
                   </div>
                 </div>

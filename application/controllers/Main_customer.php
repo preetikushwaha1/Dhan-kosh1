@@ -122,8 +122,34 @@ class Main_customer extends CI_Controller {
 	public function beneficiary_validation()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('first_name', 'First Name', 'Required');
+		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
+		$this->form_validation->set_rules('last_name', 'Last Name' , 'required|alpha');
+		$this->form_validation->set_rules('account_no' , 'Account Number', 'required');
+		$this->form_validation->set_rules('email', 'Email' , 'required');
+		$this->form_validation->set_rules('phone_no' , 'Phone Number', 'required|numeric|exact_length[10]');
+
+		if($this->form_validation->run())
+		{
+			$this->load->model('Main_customer_model');
+			$customer_id  = $this->session->userdata('customer_id');
+			$first_name   = $this->input->post('first_name');
+			$last_name    = $this->input->post('last_name');
+			$account_no   = $this->input->post('account_no');
+			$email	      = $this->input->post('email');
+			$phone_no     = $this->input->post('phone_no');
+					
+			$this->Main_customer_model->insert_beneficiary_data($customer_id, $first_name, $last_name,$account_no,$email,$phone_no );
+			redirect('Main_customer/add_beneficiary');
+
+
+		}
+		else
+		{
+			$this->add_beneficiary();
+		}
 		
+
+
 	}
 
 /*==================================================================================*/
