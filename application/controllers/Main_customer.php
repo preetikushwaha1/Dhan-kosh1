@@ -94,9 +94,12 @@ class Main_customer extends CI_Controller {
 
 	public function Beneficiary()
 	{
+		$this->load->model('Main_customer_model');
+		$customer_id = $this->session->userdata('customer_id');
+		$data['fetch_beneficiary_data'] = $this->Main_customer_model->fetch_beneficiary_data($customer_id);
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
-		$this->load->view('Customer_pages/Beneficiary.php');
+		$this->load->view('Customer_pages/Beneficiary.php',$data);
 		$this->load->view('Template2/Footer.php');
 
 	}
@@ -164,8 +167,8 @@ class Main_customer extends CI_Controller {
 					
 				);
 
-				$this->Main_customer_model->insert_data_into_beneficiary($data, $beneficiary_id);
-				
+				$this->Main_customer_model->insert_data_into_beneficiary($data, $customer_id);
+
 				}
 				
 			else {

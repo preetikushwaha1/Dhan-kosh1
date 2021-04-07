@@ -48,7 +48,15 @@ class Main_customer_model extends CI_Model
 	}
 
 //=======Fetch Benwficiary Details ==================================//
-
+	public function fetch_beneficiary_data($customer_id)
+	{
+		$query = $this->db->get('beneficiary'.$customer_id);
+		return $query;
+		//echo $this->db->last_query();
+		/*echo "<pre>";
+		print_r($query->num_rows());
+		exit;*/
+	}
 
 //===================================================================//
 

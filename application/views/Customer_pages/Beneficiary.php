@@ -48,7 +48,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </tr>
                 </thead>
                 <tbody>
-                  
+                   <?php 
+                      if($fetch_beneficiary_data->num_rows() > 0)
+                      {
+                        
+
+                        foreach ($fetch_beneficiary_data->result() as $rows){?>
+                          <tr>
+                            
+                            <td><?php echo $rows->benef_cust_id;?></td>
+
+                           
+                          </tr>
+                       
+                       <?php }
+                       
+                      }
+                      else
+                      {?>
+                          <tr>
+                            <td  colspan="10">No Data Found
+                            </td>
+                          </tr>
+
+                       <?php
+                      }?>
                 </tbody>
               </table>      
 
