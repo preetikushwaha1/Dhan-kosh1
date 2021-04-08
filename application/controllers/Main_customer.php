@@ -213,8 +213,9 @@ class Main_customer extends CI_Controller {
  	public function delete_beneficiary()
  	{
  		$this->load->model('Main_customer_model');
+ 		$customer_id= $this->session->userdata('customer_id');
  		$id = $this->uri->segment(3);	
- 		$data['delete_beneficiary_data'] = $this->Main_customer_model->delete_beneficiary_data($id);
+ 		$data['delete_beneficiary_data'] = $this->Main_customer_model->delete_beneficiary_data($customer_id, $id);
  		redirect('Main_customer/send_fund');
 
 

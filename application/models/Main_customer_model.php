@@ -44,7 +44,9 @@ class Main_customer_model extends CI_Model
 
 	public function insert_data_into_beneficiary($data,$beneficiary_id)
 	{
-		$this->db->insert('beneficiary'.$beneficiary_id,$data);
+		$query = $this->db->insert('beneficiary'.$beneficiary_id, $data);
+		///echo $this->db->last_query();
+		//exit;
 	}
 
 //=======Fetch Benwficiary Details ==================================//
@@ -65,12 +67,11 @@ class Main_customer_model extends CI_Model
 
 
 //=====Delete Beneficiary Data============================//
-	public function delete_beneficiary_data($id)
+	public function delete_beneficiary_data($customer_id,$id)
 	{
-		$this->db->where('customer_id',$id);
-		$query= $this->db->delete('customer_details');
+		$this->db->where('benef_cust_id',$id);
+		$query= $this->db->delete('beneficiary'.$customer_id);
 		return $query;
-
 	}
 
 //===================================================================//
