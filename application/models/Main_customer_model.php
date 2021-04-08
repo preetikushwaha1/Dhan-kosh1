@@ -50,16 +50,33 @@ class Main_customer_model extends CI_Model
 //=======Fetch Benwficiary Details ==================================//
 	public function fetch_beneficiary_data($customer_id)
 	{
-		$query = $this->db->get('beneficiary'.$customer_id);
+		
+		$query= $this->db->query("SELECT DISTINCT customer_id , cust.first_name, cust.last_name, cust.account_no 
+									from customer_details as cust join beneficiary$customer_id as benef on benef.benef_cust_id=cust.customer_id");
+
+		
 		return $query;
 		//echo $this->db->last_query();
+		//exit;
 		/*echo "<pre>";
-		print_r($query->num_rows());
+		print_r($query->row());
 		exit;*/
 	}
 
 //===================================================================//
 
+
+//=====Fetch Send Transfer  data============================================//
+
+	public function fetch_data($customer_id)
+	{
+		$this->db->where('customer_id',$customer_id);
+		$query = $this->db->get('customer_details');
+		return $query;
+		/*echo "<pre>";
+		print_r($query->row()->customer_id);
+		exit;*/
+	}
 
 //==fetch Transaction by customer id=====================================//
 	public function fetch_view_transaction($customer_id)

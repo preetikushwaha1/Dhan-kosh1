@@ -100,7 +100,7 @@ class Main_customer extends CI_Controller {
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
 		$this->load->view('Customer_pages/Beneficiary.php',$data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 
@@ -193,6 +193,20 @@ class Main_customer extends CI_Controller {
 
 /*==================================================================================*/
 
+
+/*========Send Transfer=========================================*/
+
+	public function send_fund()
+	{
+		$this->load->model('Main_customer_model');
+		$customer_id = $this->session->userdata('customer_id');
+		$data['fetch_data']=$this->Main_customer_model->fetch_data($customer_id);
+		$this->load->view('Template2/Header.php');
+		$this->load->view('Template2/Customer_sidebar.php');
+		$this->load->view('Customer_pages/Send_fund.php',$data);
+		$this->load->view('Template2/Footer.php');
+	
+	}
 /*=======funf Form Validation===========================================================*/
 	
 	public function fund_form_validation()

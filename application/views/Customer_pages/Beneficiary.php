@@ -56,7 +56,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         foreach ($fetch_beneficiary_data->result() as $rows){?>
                           <tr>
                             
-                            <td><?php echo $rows->benef_cust_id;?></td>
+                            <td><?php echo $rows->customer_id;?></td>
+                            <td><?php echo $rows->account_no;?></td>
+                            <td><?php echo $rows->first_name." ".$rows->last_name;?></td>
+                            <td><a href="<?php echo site_url('Main_customer/send_fund');?>"  class=" btn btn-success fa fa-money" ></a></td>
+                            <td><a href=""  class="btn btn-danger fa fa-trash-o"></a></td>
 
                            
                           </tr>
@@ -67,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       else
                       {?>
                           <tr>
-                            <td  colspan="10">No Data Found
+                            <td  colspan="10">No Data Beneficiary Found
                             </td>
                           </tr>
 
