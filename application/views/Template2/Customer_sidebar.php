@@ -36,11 +36,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </ul-->
           </li>
 
-          <li class="sub-menu">
+          <!--li class="sub-menu">
             <a href="<?php echo site_url('Main_customer/view_account');?>">
               <i class="fa fa-briefcase"></i>
               <span>Account Details</span>
-              </a>
+              </a-->
             <!--ul class="sub">
               <li><a href="<?php echo site_url('Main/new_account');?>"> Add New Account</a></li>
               <li><a href="<?php echo site_url('Main_customer/view_account');?>">View Account</a></li>
@@ -49,19 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </ul-->
           </li>
 
-           <li>
+           <!--li>
             <a href="<?php echo site_url('Main_customer/balance');?>">
               <i class="fa fa-money"></i>
               <span>Balance</span>
               </a>
-          </li>
+          </li-->
 
-           <li>
+           <!--li>
             <a href="<?php echo site_url('Main_customer/customer_transaction');?>">
               <i class="fa fa-money"></i>
               <span>Transaction</span>
               </a>
-          </li>
+          </li-->
 
 
           <li>
