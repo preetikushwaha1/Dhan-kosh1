@@ -12,7 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="form-panel" style="padding:40px">
               <h4 class="mb">Transfer Funds</h4>
 
-               <?php extract($fetch_data->row_array());?>
+            
+                <?php extract($fetch_data->row_array());?>
 
               <form class="form-horizontal style-form" method="post" name="add_beneficiary_forms" id="add_beneficiary_forms" 
               action="<?php echo site_url('Main_customer/');?>" >
@@ -20,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               
 
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">To : <?php echo $customer_id;?></label>
+                  <label class="col-sm-2 col-sm-2 control-label">To : <?php echo $first_name." ".$last_name;?></label>
                   <div class="col-sm-4">
                    
                   </div>

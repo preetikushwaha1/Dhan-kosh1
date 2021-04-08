@@ -199,8 +199,8 @@ class Main_customer extends CI_Controller {
 	public function send_fund()
 	{
 		$this->load->model('Main_customer_model');
-		$customer_id = $this->session->userdata('customer_id');
-		$data['fetch_data']=$this->Main_customer_model->fetch_data($customer_id);
+		$id = $this->uri->segment(3);
+		$data['fetch_data'] = $this->Main_customer_model->fetch_data($id);
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
 		$this->load->view('Customer_pages/Send_fund.php',$data);
