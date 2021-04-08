@@ -25,9 +25,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <!-- page start-->
 
 
-           <div class="form-panel">
-               <a class="btn btn-theme" href="<?php echo site_url('Main_customer/add_beneficiary');?>">Add Beneficiary</a>
-          
+           <div class="form-panel"><br>
+             <span style="padding-left: 550px">  <a class="btn btn-primary" href="<?php echo site_url('Main_customer/add_beneficiary');?>">Add Beneficiary</a></span>
+             <br><br>
+             <hr>
+            
               <form class="form-horizontal style-form" method="post" name="mini_statement_form" id="mini_statement_form"
               action="<?php echo site_url('');?>">
 
