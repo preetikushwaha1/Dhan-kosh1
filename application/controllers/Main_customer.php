@@ -207,6 +207,18 @@ class Main_customer extends CI_Controller {
 		$this->load->view('Template2/Footer.php');
 	
 	}
+
+
+/*==========Delete Beneficiary =======================================*/
+ 	public function delete_beneficiary()
+ 	{
+ 		$this->load->model('Main_customer_model');
+ 		$id = $this->uri->segment(3);	
+ 		$data['delete_beneficiary_data'] = $this->Main_customer_model->delete_beneficiary_data($id);
+ 		redirect('Main_customer/send_fund');
+
+
+ 	} 
 /*=======funf Form Validation===========================================================*/
 	
 	public function fund_form_validation()

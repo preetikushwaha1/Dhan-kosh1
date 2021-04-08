@@ -60,7 +60,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?php echo $rows->account_no;?></td>
                             <td><?php echo $rows->first_name." ".$rows->last_name;?></td>
                             <td><a href="<?php echo site_url('Main_customer/send_fund/'.$rows->customer_id);?>"  class=" btn btn-success fa fa-money" ></a></td>
-                            <td><a href=""  class="btn btn-danger fa fa-trash-o"></a></td>
+                            <td><a href="<?php echo site_url('Main_customer/delete_beneficiary/'.$rows->customer_id);?>"  class="btn btn-danger fa fa-trash-o" 
+                              onclick="return confirm(Do you really want Delete!)"></a></td>
 
                            
                           </tr>

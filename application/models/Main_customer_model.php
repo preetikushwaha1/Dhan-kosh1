@@ -63,6 +63,16 @@ class Main_customer_model extends CI_Model
 		exit;*/
 	}
 
+
+//=====Delete Beneficiary Data============================//
+	public function delete_beneficiary_data($id)
+	{
+		$this->db->where('customer_id',$id);
+		$query= $this->db->delete('customer_details');
+		return $query;
+
+	}
+
 //===================================================================//
 
 
