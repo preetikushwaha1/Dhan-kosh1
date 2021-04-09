@@ -208,6 +208,29 @@ class Main_customer extends CI_Controller {
 	
 	}
 
+/*================Send Fund Transaction==============================*/
+
+	public function send_fund_validation()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('amount','Enter Amount ','required|numeric');
+		$this->form_validation->set_rules('passward','Passward','required');
+
+		if($this->form_validation->run())
+		{
+			$this->load->model('Main_customer_model');
+			$sender_id = $this->session->userdata('customer_id');
+			$receiver_id =$this->uri->segment(3);
+	
+			//redirect('Main_customer/send_fund');
+		}
+		else
+		{
+			echo "false";
+		}
+
+	}
+
 
 /*==========Delete Beneficiary =======================================*/
  	public function delete_beneficiary()

@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
            <div class="form-panel"><br>
-             <span style="padding-left: 550px">  <a class="btn btn-primary" href="<?php echo site_url('Main_customer/add_beneficiary');?>">Add Beneficiary</a></span>
+             <a class="btn btn-primary" href="<?php echo site_url('Main_customer/add_beneficiary');?>">Add Beneficiary</a>
              <br><br>
              <hr>
             

@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <?php extract($fetch_data->row_array());?>
 
               <form class="form-horizontal style-form" method="post" name="add_beneficiary_forms" id="add_beneficiary_forms" 
-              action="<?php echo site_url('Main_customer/');?>" >
+              action="<?php echo site_url('Main_customer/send_fund_validation/'.$customer_id);?>" >
 
               
 
@@ -38,8 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Enter Amount(INR) :</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="account_no" id="account_no"  value="<?php echo set_value('account_no');?>">
-                    <span class="text-danger"><?php echo form_error('account_no');?></span>
+                    <input type="text" class="form-control" name="amount" id="amount"  value="<?php echo set_value('amount');?>">
+                    <span class="text-danger"><?php echo form_error('amount');?></span>
                   </div>
                 </div>
 
@@ -47,8 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Enter your Password</label>
                   <div class="col-sm-4">
-                    <input type="Password" class="form-control" name="account_no" id="account_no"  value="<?php echo set_value('account_no');?>">
-                    <span class="text-danger"><?php echo form_error('account_no');?></span>
+                    <input type="Password" class="form-control" name="passward" id="passward"  value="<?php echo set_value('passward');?>">
+                    <span class="text-danger"><?php echo form_error('passward');?></span>
                   </div>
                 </div>
 
