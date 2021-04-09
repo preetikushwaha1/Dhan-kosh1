@@ -213,20 +213,34 @@ class Main_customer extends CI_Controller {
 	public function send_fund_validation()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('amount','Enter Amount ','required|numeric');
-		$this->form_validation->set_rules('passward','Passward','required');
+		$this->form_validation->set_rules('amount','Amount ','required|numeric');
+		$this->form_validation->set_rules('password','Password','required');
 
 		if($this->form_validation->run())
 		{
 			$this->load->model('Main_customer_model');
 			$sender_id = $this->session->userdata('customer_id');
 			$receiver_id =$this->uri->segment(3);
+
+			$amount = $this->input->post('amount');
+			$password = $this->input->post('password');
+			//$this->Main_customer_model->send_fund_action($sender_id,$receiver_id,$amount,$password);
+
+			$query1= $this->db->query("SELECT * FROM customer_details WHERE customer_id=$sender_id  AND password = $password");
+			$query2= $this->db->query("SELECT * FROM customer_details WHERE customer_id=$receiver_id");
 	
-			//redirect('Main_customer/send_fund');
+			if($query1->num_rows()> 0)
+			{
+				$query3= $this->db->query("SELECT balance FROM passbook".$sender_id. " ORDER BY trans_id DESC LIMIT 1");
+				
+			
+				
+			}
+			redirect('Main_customer/send_fund');
 		}
 		else
 		{
-			echo "false";
+			echo $this->send_fund();
 		}
 
 	}

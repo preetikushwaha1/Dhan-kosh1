@@ -47,8 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Enter your Password</label>
                   <div class="col-sm-4">
-                    <input type="Password" class="form-control" name="passward" id="passward"  value="<?php echo set_value('passward');?>">
-                    <span class="text-danger"><?php echo form_error('passward');?></span>
+                    <input type="Password" class="form-control" name="password" id="password"  value="<?php echo set_value('password');?>">
+                    <span class="text-danger"><?php echo form_error('password');?></span>
                   </div>
                 </div>
 
