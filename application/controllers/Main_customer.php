@@ -212,6 +212,14 @@ class Main_customer extends CI_Controller {
 
 	public function send_fund_validation()
 	{
+
+		$this->session->set_flashdata('connection_error',"Connection error! Please Try Again");
+
+		$this->load->model('Main_model');
+		$this->load->helper('date');
+		$now = date("Y-m-d H:i:s");	
+
+
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('amount','Amount ','required|numeric');
 		$this->form_validation->set_rules('password','Password','required');
@@ -232,18 +240,61 @@ class Main_customer extends CI_Controller {
 			if($query1->num_rows()> 0)
 			{
 				$query3= $this->db->query("SELECT balance FROM passbook".$sender_id. " ORDER BY trans_id DESC LIMIT 1");
-				
-			
-				
+				$sender_balance = $query3->row()->balance;
+				$updated_sender_balance = $sender_balance - $amount;
+				if($updated_sender_balance >= 0)
+				{
+
+					$query4= $this->db->query('SELECT balance FROM passbook'.$receiver_id.' ORDER BY trans_id DESC LIMIT 1');
+					$receiver_balance = $query4->row()->balance;
+					$updated_receiver_balance = $receiver_balance + $amount;
+
+
+					$data1 = array(
+							"trans_date" => $now,
+							"remarks"    => "Sent to:".$query2->row()->first_name." ". $query2->row()->last_name.", AC/no :  ".$query2->row()->account_no,
+							"debit"		=>	$amount,
+							"credit"   => 0,
+							"balance"  => $updated_sender_balance,
+						);
+
+					$query5 =$this->Main_model->insert_data_into_passwork($data1,$sender_id);
+
+
+					$data2 = array(
+							"trans_date" => $now,
+							"remarks"    => "Received From:".$query1->row()->first_name." ". $query1->row()->last_name.", AC/no :  ".$query1->row()->account_no,
+							"debit"		=>	0,
+							"credit"   => $amount,
+							"balance"  => $updated_receiver_balance,
+					);
+
+					$query6= $this->Main_model->insert_data_into_passwork($data2,$receiver_id);
+
+					if(($query5 === TRUE) && ($query6 === TRUE) )
+					{
+						$this->session->set_flashdata('success',"Transfer Successful");
+					}
+				 }
+				 else
+				 {
+				 		$this->session->set_flashdata('Insufficient_balance', "Insufficient Balance");
+				 }
 			}
-			redirect('Main_customer/send_fund');
-		}
-		else
-		{
-			echo $this->send_fund();
+			else
+			{
+					$this->session->set_flashdata('wrong',"Wrong Password Enter");
+			}
+			redirect('Main_customer/send_fund()');
 		}
 
+			else
+			{
+				$this->send_fund();
+			}
+		
 	}
+	
 
 
 /*==========Delete Beneficiary =======================================*/
