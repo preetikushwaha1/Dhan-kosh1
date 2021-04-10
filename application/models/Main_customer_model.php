@@ -66,14 +66,14 @@ class Main_customer_model extends CI_Model
 	}
 
 //=============send funcd action ==============================//
-	public function send_fund_action($sender_id,$receiver_id,$amount,$password)
+	/*public function send_fund_action($sender_id,$receiver_id,$amount,$password)
 	{
 		/*echo "sender id=".$sender_id;
 		echo "receiver_id=".$receiver_id;
 		echo "amount=".$amount;
 		echo "passward=".$passward;
 		exit;*/
-		$query1= $this->db->query("SELECT * FROM customer_details WHERE customer_id=$sender_id  AND password = $password");
+		/*$query1= $this->db->query("SELECT * FROM customer_details WHERE customer_id=$sender_id  AND password = $password");
 
 
 		$query2= $this->db->query("SELECT * FROM customer_details WHERE customer_id=$receiver_id");
@@ -85,10 +85,9 @@ class Main_customer_model extends CI_Model
 			
 		
 			
-		}
-		
+		}		
 
-	}
+	}*/
 
 
 //=====Delete Beneficiary Data============================//
