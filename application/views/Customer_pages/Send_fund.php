@@ -4,15 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!--main content start-->
   <section id="main-content">
-      <section class="wrapper" >
-        <h3>Transfer Funds</h3>
+    <section class="wrapper" >
+      <h3>Transfer Funds</h3>
         <!-- BASIC FORM ELELEMNTS -->
         <div class="row mt" >
           <div class="col-lg-12">
             <div class="form-panel" style="padding:40px">
               <h4 class="mb">Transfer Funds</h4>
 
-            
                 <?php extract($fetch_data->row_array());?>
 
               <form class="form-horizontal style-form" method="post" name="add_beneficiary_forms" id="add_beneficiary_forms" 
@@ -60,7 +59,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
 
-            
       
                   <a class="btn btn-success" name="go_back" id="go_back" href="<?php echo site_url('Main_customer/Beneficiary');?>">Go Back</a>&nbsp;
                   <button type="reset" class="btn btn-danger" name="cancel" id="cancel" onclick=" return confirm('Do you really want to reset')">Reset</button> 
@@ -80,4 +78,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- /row -->
       </section>
       <!-- /wrapper -->
-    </section>
+  </section>
