@@ -89,7 +89,6 @@ class Main_customer_model extends CI_Model
 
 	}*/
 
-
 //=====Delete Beneficiary Data============================//
 	public function delete_beneficiary_data($customer_id,$id)
 	{
@@ -119,8 +118,6 @@ class Main_customer_model extends CI_Model
 		
 		$query=$this->db->get('passbook'.$customer_id);
 		return $query;
-
-
 	}
 //=========================================================//
 
@@ -133,7 +130,6 @@ class Main_customer_model extends CI_Model
 		return $query;
 
 	}
-
 
 //==fetch balance by account number=====================================//
 	/*public function fetch_balance($account_number)
@@ -184,7 +180,7 @@ class Main_customer_model extends CI_Model
 		return $query;
 	}
 
-
+//===================================================================================//
 
 	//======fetch news ================================================//
 	public function fetch_news()
