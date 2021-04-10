@@ -287,7 +287,6 @@ class Main_customer extends CI_Controller {
 			}
 			redirect('Main_customer/send_fund()');
 		}
-
 			else
 			{
 				$this->send_fund();
