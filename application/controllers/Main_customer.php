@@ -349,13 +349,14 @@ class Main_customer extends CI_Controller {
 
 	public function mini_statement()
 	{
-		$this->load->model('Main_customer_model');
+		$this->load->model('Main_model');
 		//$account_number = $this->input->post('account_number');
-		$data['fetch_mini_statement'] = $this->Main_customer_model->fetch_mini_statement();
+		$customer_id= $this->session->userdata('customer_id');
+		$data['fetch_view_transaction'] = $this->Main_model->fetch_view_transaction($customer_id);
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
 		$this->load->view('Customer_pages/Mini_statement.php',$data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 
