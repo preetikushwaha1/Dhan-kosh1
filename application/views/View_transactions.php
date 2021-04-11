@@ -8,15 +8,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
+
+  <style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
+
 </head>
 
 <body>
     <section id="main-content">
-      <section class="wrapper">
-         <h3></i>View Customer</h3>
+      <section class="wrapper ">
+         <h3 class="hideblock"></i>View Customer</h3>
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
+                <span class="hideblock"> <a href="#" onclick="window.print()">
+                  <span class="btn  btn-success fa fa-print" style="float:right;padding:10px;font-size: 14px" > Print</span> </a>
+                </span>
+                <br>
           
               <form class="form-horizontal style-form" method="post" name="view_cust_form" id="view_cust_form" 
               action="">
@@ -34,9 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </form>
               <br>
 
-          <div class="content-panel">
-            <div class="adv-table">
-              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+          <div class="content-panel ">
+            <div class="adv-table ">
+              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered " id="hidden-table-info">
                 <thead>
                   <tr class="gradeX">
                       
@@ -65,8 +76,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td name="cust_id"><?php echo $rows->trans_id;?></td>
                             <td><?php echo $sanitized_time;?></td>
                             <td><?php echo $rows->remarks;?></td>
-                            <td><?php echo "<span style='color:  #ed5565'><b> ". $rows->debit ."</b></span>" ;?></td>
-                            <td><?php echo "<span style='color:  #4CAF50'><b> ". $rows->credit ."</b></span>" ;?></td>
+                            <td><?php echo "<span style='color:  #ed5565'><b>- &#8377; ". $rows->debit ."</b></span>" ;?></td>
+                            <td><?php echo "<span style='color:  #4CAF50'><b>+ &#8377; ". $rows->credit ."</b></span>" ;?></td>
                             <td><?php echo $rows->balance;?></td> 
                           </tr>
                        
@@ -99,11 +110,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>DhanKosh</strong>. All Rights Reserved
         </p>
-        <div class="credits">
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
-        </div>
+       
         <a href="advanced_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>

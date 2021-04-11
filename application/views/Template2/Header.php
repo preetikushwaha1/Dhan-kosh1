@@ -44,11 +44,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+
+    <style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
 </head>
 
 
  <!--header start-->
-    <header class="header black-bg">
+    <header class="header black-bg hideblock">
       <div class="sidebar-toggle-box">
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>

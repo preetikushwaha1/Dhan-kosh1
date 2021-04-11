@@ -253,7 +253,7 @@ class Main_customer extends CI_Controller {
 
 					$data1 = array(
 							"trans_date" => $now,
-							"remarks"    => "Sent to:".$query2->row()->first_name." ". $query2->row()->last_name.", AC/no :  ".$query2->row()->account_no,
+							"remarks"    => "Sent to : ".$query2->row()->first_name." ". $query2->row()->last_name.", AC/no :  ".$query2->row()->account_no,
 							"debit"		=>	$amount,
 							"credit"   => 0,
 							"balance"  => $updated_sender_balance,
@@ -264,7 +264,7 @@ class Main_customer extends CI_Controller {
 
 					$data2 = array(
 							"trans_date" => $now,
-							"remarks"    => "Received From:".$query1->row()->first_name." ". $query1->row()->last_name.", AC/no :  ".$query1->row()->account_no,
+							"remarks"    => "Received From : ". $query1->row()->first_name." ". $query1->row()->last_name.", AC/no :  ".$query1->row()->account_no,
 							"debit"		=>	0,
 							"credit"   => $amount,
 							"balance"  => $updated_receiver_balance,
