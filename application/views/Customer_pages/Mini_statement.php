@@ -17,6 +17,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
+
+                <?php if($this->session->flashdata('success')){?>
+                    <div class="alert alert-success">      
+                        <?php echo $this->session->flashdata('success')?><br>
+                        
+                    </div>
+                  <?php } ?>
+
+                  <?php if($this->session->flashdata('Insufficient_balance')){?>
+                    <div class="alert alert-warning">      
+                        <?php echo $this->session->flashdata('Insufficient_balance')?><br>
+                        
+                    </div>
+                  <?php } ?>
+
+                 <?php if($this->session->flashdata('wrong')){?>
+                    <div class="alert alert-danger">      
+                        <?php echo $this->session->flashdata('wrong')?><br>
+                        
+                    </div>
+                  <?php } ?>
           
               <form class="form-horizontal style-form" method="post" name="view_cust_form" id="view_cust_form" 
               action="">
@@ -31,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <button type="submit" class="btn btn-theme" name="search_by_Cust_id">Submit</button>   
                     </div>
                 </div-->
+
               </form>
               <br>
 

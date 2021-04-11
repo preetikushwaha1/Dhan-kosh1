@@ -25,25 +25,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                   <?php } ?>
 
+                  <?php if($this->session->flashdata('Insufficient_balance')){?>
+                    <div class="alert alert-warning">      
+                        <?php echo $this->session->flashdata('Insufficient_balance')?><br>
+                        
+                    </div>
+                  <?php } ?>
+
+                 <?php if($this->session->flashdata('wrong')){?>
+                    <div class="alert alert-danger">      
+                        <?php echo $this->session->flashdata('wrong')?><br>
+                        
+                    </div>
+                  <?php } ?>
+
+
 
 
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">To : <?php echo $first_name." ".$last_name;?></label>
-                  <div class="col-sm-4">
-                   
-                  </div>
+                  <label class="col-sm-4 col-sm-4 control-label" style="font-size: 16px">To : <b><?php echo $first_name." ".$last_name;?></b></label>
+             
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Account Number : <?php echo $account_no;?></label>
-                  <div class="col-sm-4">
-                   
-                  </div>
+                  <label class="col-sm-4 col-sm-4 control-label"  style="font-size: 16px">Account Number : <b><?php echo $account_no;?></b></label>
+                
                 </div>
 
 
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Enter Amount(INR) :</label>
+                  <label class="col-sm-2 col-sm-2 control-label"  style="font-size: 16px">Enter Amount(INR) :</label>
                   <div class="col-sm-4">
                     <input type="text" class="form-control" name="amount" id="amount"  value="<?php echo set_value('amount');?>">
                     <span class="text-danger"><?php echo form_error('amount');?></span>
@@ -52,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Enter your Password</label>
+                  <label class="col-sm-2 col-sm-2 control-label"  style="font-size: 16px">Enter your Password :</label>
                   <div class="col-sm-4">
                     <input type="Password" class="form-control" name="password" id="password"  value="<?php echo set_value('password');?>">
                     <span class="text-danger"><?php echo form_error('password');?></span>
@@ -66,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div align="center">
                   
-                  <button type="submit" class="btn btn-theme" name="pay" id="pay">Submit</button> &nbsp;
+                  <button type="submit" class="btn btn-theme" name="pay" id="pay" onclick="return confirm('Are you sure')">Submit</button> &nbsp;
                
                 </div>
               </form>

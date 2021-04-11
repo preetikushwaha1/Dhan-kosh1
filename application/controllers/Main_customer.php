@@ -168,6 +168,7 @@ class Main_customer extends CI_Controller {
 				);
 
 				$this->Main_customer_model->insert_data_into_beneficiary($data, $customer_id);
+			
 
 				}
 				
@@ -176,12 +177,12 @@ class Main_customer extends CI_Controller {
            			$this->session->set_flashdata('error','Please Try again!! , Invalid data Enter');
         		}
 			}
-
-
-
-			$this->session->set_flashdata('success_message', "Beneficiary Added Successfully");
+				
+				$this->session->set_flashdata('success_message', "Beneficiary Added Successfully");
+			
 			redirect('Main_customer/add_beneficiary');
 
+		
 		}
 		else
 		{
@@ -273,19 +274,19 @@ class Main_customer extends CI_Controller {
 
 					if(($query5 === TRUE) && ($query6 === TRUE) )
 					{
-						$this->session->set_flashdata('success',"Transfer Successful");
+						$this->session->set_flashdata('success',"<b>Transfer Successful</b>");
 					}
 				 }
 				 else
 				 {
-				 		$this->session->set_flashdata('Insufficient_balance', "Insufficient Balance");
+				 		$this->session->set_flashdata('Insufficient_balance', "<b>Insufficient Balance</b>");
 				 }
 			}
 			else
 			{
-					$this->session->set_flashdata('wrong',"Wrong Password Enter");
+					$this->session->set_flashdata('wrong',"<b>Wrong Password Enter</b>");
 			}
-			redirect('Main_customer/send_fund()');
+			redirect('Main_customer/mini_statement');
 		}
 			else
 			{
