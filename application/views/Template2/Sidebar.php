@@ -50,12 +50,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </li-->
 
      
-           <li>
+           <!--li>
             <a href="<?php echo site_url('Main/balance');?>">
               <i class="fa fa-money"></i>
               <span>Balance</span>
               </a>
-          </li>
+          </li-->
 
           <!--li>
             <a href="<?php echo site_url('Main/fund_transfer');?>">

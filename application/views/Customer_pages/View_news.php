@@ -7,13 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <head>
 
-  <!--external css-->
-
-  <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_page.css');?>" rel="stylesheet" />
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
- 
 </head>
+
 
 <body>
   <section id="container">
@@ -68,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                      
                     </tbody>
                   </table>
-                </div>
+                </div><br><br><br>
               </div>
           <!-- page end-->
         </div>
@@ -81,13 +78,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--main content end-->
 
 </section>
-  <!-- js placed at the end of the document so the pages load faster -->
- 
+   <!-- js placed at the end of the document so the pages load faster -->
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.js');?>"></script>
-
+  <script src="<?php echo base_url('assets2/lib/bootstrap/js/bootstrap.min.js');?>"></script>
+  <script class="include" type="text/javascript" src="<?php echo base_url('assets2/lib/jquery.dcjqaccordion.2.7.js');?>"></script>
+  <script src="<?php echo base_url('assets2/lib/jquery.scrollTo.min.js');?>"></script>
+  <script src="<?php echo base_url('assets2/lib/jquery.nicescroll.js');?>" type="text/javascript"></script>
   <script type="text/javascript" language="javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/jquery.dataTables.js');?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets2/lib/advanced-datatable/js/DT_bootstrap.js');?>"></script>
+  <!--common script for all pages-->
+  <script src="<?php echo base_url('assets2/lib/common-scripts.js');?>"></script>
+  <!--script for this page-->
+  <script type="text/javascript">
 
+
+    $(document).ready(function() {
+
+      var oTable = $('#hidden-table-info').dataTable({
+        "aoColumnDefs": [{
+          "bSortable": false,
+          "aTargets": [0]
+        }],
+        "aaSorting": [
+          [0, 'desc']
+        ]
+      });
+
+ 
+    });
+  </script>
 </body>
 
+
+
 </html>
+

@@ -22,9 +22,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           </div>
           <!--CUSTOM CHART START -->       
-          <div class="row mt" style="padding-left: 350px" >
+          <div class="row mt" style="padding-left: 250px" >
               <!-- SERVER STATUS PANELS -->
-            <div class="col-md-8 col-sm-4 mb">
+            <div class="col-md-10 col-sm-6 mb">
               <div class="grey-panel pn ">
                 <div class="grey-header">
                   <h4 style="color: #000000"><b>Account Details</b></h4>
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           }
                           else
                           {
-                            $transaction = $row->debit;
+                            $transaction = $rows->debit;
                             $type = "<span style='color:  #ed5565'><b> (Debit) </b></span>";
 
                           }?>
