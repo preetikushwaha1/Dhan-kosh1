@@ -80,16 +80,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         foreach ($fetch_view_transaction->result() as $rows){?>
                           <tr>
                             <?php  $time=strtotime($rows->trans_date);
-                            $sanitized_time = date("d/m/Y, g:i A", $time);?>
+                            $sanitized_time = date("d/m/Y, h:i A", $time);?>
 
                             <!--td><?php echo $i;;?></td--><!--?php $i++;?-->
                             
                             <td name="cust_id"><?php echo $rows->trans_id;?></td>
                             <td><?php echo $sanitized_time;?></td>
                             <td><?php echo $rows->remarks;?></td>
-                            <td><?php echo "<span style='color:  #ed5565'><b> ". $rows->debit ."</b></span>" ;?></td>
-                            <td><?php echo "<span style='color:  #4CAF50'><b> ". $rows->credit ."</b></span>" ;?></td>
-                            <td><?php echo $rows->balance;?></td> 
+                            <td><?php echo "<span style='color:  #ed5565'><b>- &#8377; ". $rows->debit ."</b></span>" ;?></td>
+                            <td><?php echo "<span style='color:  #4CAF50'><b>+ &#8377;  ". $rows->credit ."</b></span>" ;?></td>
+                            <td><?php echo "&#8377; ". $rows->balance;?></td> 
                           </tr>
                        
                        <?php }
