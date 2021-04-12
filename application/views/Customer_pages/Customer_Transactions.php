@@ -17,8 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
-
-                <?php if($this->session->flashdata('success')){?>
+                 <?php if($this->session->flashdata('success')){?>
                     <div class="alert alert-success">      
                         <?php echo $this->session->flashdata('success')?><br>
                         
@@ -38,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         
                     </div>
                   <?php } ?>
+         
           
               <form class="form-horizontal style-form" method="post" name="view_cust_form" id="view_cust_form" 
               action="">
@@ -73,11 +73,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </thead>
                 <tbody>
                    <?php 
-                      if($fetch_mini_statement->num_rows() > 0)
+                      if($fetch_view_transaction->num_rows() > 0)
                       {
                         
 
-                        foreach ($fetch_mini_statement->result() as $rows){?>
+                        foreach ($fetch_view_transaction->result() as $rows){?>
                           <tr>
                             <?php  $time=strtotime($rows->trans_date);
                             $sanitized_time = date("d/m/Y, h:i A", $time);?>

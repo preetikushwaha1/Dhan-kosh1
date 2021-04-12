@@ -172,11 +172,11 @@ class Main_customer_model extends CI_Model
 
 
 //========fetch Mini statement =================================================//
-	public  function fetch_mini_statement()
+	public  function fetch_mini_statement($customer_id)
 	{
 		$this->db->select('*');
 		$this->db->limit(5);
-		$query = $this->db->get('fund_transfer');
+		$query = $this->db->get('passbook'.$customer_id);
 		return $query;
 	}
 

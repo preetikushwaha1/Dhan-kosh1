@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <h5 class="centered" style=" font-variant: small-caps; font-size: 20px;"><?php echo $this->session->userdata('user_name');?></h5>
 
           <li class="mt">
-            <a class="active" href="<?php echo site_url('Main');?>">
+            <a class="" href="<?php echo site_url('Main');?>">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
             </a>

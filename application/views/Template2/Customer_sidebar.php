@@ -56,12 +56,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </a>
           </li-->
 
-           <!--li>
-            <a href="<?php echo site_url('Main_customer/customer_transaction');?>">
+           <li>
+            <a href="<?php echo site_url('Main_customer/customer_transactions');?>">
               <i class="fa fa-money"></i>
-              <span>Transaction</span>
+              <span>Transactions</span>
               </a>
-          </li-->
+          </li>
 
 
           <li>

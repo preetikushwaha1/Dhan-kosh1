@@ -59,7 +59,7 @@ class Main_customer extends CI_Controller {
 
 /*=================Transaction====================================================*/
 
-	public function customer_transaction()
+	public function customer_transactions()
 	{
 		$this->load->model('Main_model');
 		$customer_id = $this->session->userdata('customer_id');
@@ -67,7 +67,7 @@ class Main_customer extends CI_Controller {
 
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
-		$this->load->view('Customer_pages/Customer_transaction.php',$data);
+		$this->load->view('Customer_pages/Customer_Transactions.php',$data);
 		
 
 	}
@@ -286,7 +286,7 @@ class Main_customer extends CI_Controller {
 			{
 					$this->session->set_flashdata('wrong',"<b>Wrong Password Enter</b>");
 			}
-			redirect('Main_customer/mini_statement');
+			redirect('Main_customer/customer_transactions');
 		}
 			else
 			{
@@ -346,18 +346,21 @@ class Main_customer extends CI_Controller {
 /*=============================================================================================*/
 
 
+
+
+
 /*=============Mini statement=================================================================================*/
 
 	public function mini_statement()
 	{
-		$this->load->model('Main_model');
+		$this->load->model('Main_customer_model');
 		//$account_number = $this->input->post('account_number');
 		$customer_id= $this->session->userdata('customer_id');
-		$data['fetch_view_transaction'] = $this->Main_model->fetch_view_transaction($customer_id);
+		$data['fetch_mini_statement'] = $this->Main_customer_model->fetch_mini_statement($customer_id);
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
 		$this->load->view('Customer_pages/Mini_statement.php',$data);
-		//$this->load->view('Template2/Footer.php');
+		$this->load->view('Template2/Footer.php');
 
 	}
 
