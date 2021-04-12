@@ -17,6 +17,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
+
+                
+                <?php if($this->session->flashdata('success')){?>
+                    <div class="alert alert-success">      
+                        <?php echo $this->session->flashdata('success')?><br>
+                        
+                    </div>
+                  <?php } ?>
           
               <form class="form-horizontal style-form" method="post" name="view_cust_form" id="view_cust_form" 
               action="<?php echo site_url('Main/view_customer');?>">
@@ -33,6 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div-->
               </form>
               <br>
+
 
           <div class="content-panel">
             <div class="adv-table">

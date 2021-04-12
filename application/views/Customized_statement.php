@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><!--i class="fa fa-angle-right"></i-->Customised Statement</h3>
+        <h3>Customised Statement</h3>
         <div class="row mb">
           <!-- page start-->
 

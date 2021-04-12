@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <label class="col-sm-2 col-sm-2 control-label">Gender</label>
                     <div class="radio">&nbsp;  &nbsp;  
                      <label>
-                        <input type="radio" name="gender" id="gender" value="male" checked>
+                        <input type="radio" name="gender" id="gender" value="male"  checked>
                       Male
                     </label>
                       &nbsp;   &nbsp;  &nbsp;

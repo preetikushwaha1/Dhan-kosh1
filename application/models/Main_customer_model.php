@@ -154,11 +154,11 @@ class Main_customer_model extends CI_Model
 
 
 //=======Fetch Balance by range =======================================================//
-	public function fetch_balance_by_range($from_date,$to_date)
+	public function fetch_balance_by_range($from_date,$to_date,$passbook_id)
 	{
 		$this->db->select('*');
-		$this->db->where('DATE(date) BETWEEN "'.$from_date.'" AND "'.$to_date.'"', ' ',false);
-		$query = $this->db->get('fund_transfer');
+		$this->db->where('DATE(trans_date) BETWEEN "'.$from_date.'" AND "'.$to_date.'"', ' ', false);
+		$query = $this->db->get('passbook'.$passbook_id);
 		return $query;
 	}
 //============================================================================//

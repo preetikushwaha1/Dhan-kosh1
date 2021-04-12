@@ -81,6 +81,7 @@ class Main_model extends CI_Model
 
 			$this->db->where('customer_id',$id);
 			$this->db->update('customer_details',$data);
+			$this->session->set_flashdata('success','Record Updated Successfully!');
 
 			redirect('Main/view_customer');
 

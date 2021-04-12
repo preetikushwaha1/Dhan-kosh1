@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><!--i class="fa fa-angle-right"></i-->Customised Statement</h3>
+        <h3>Customised Statement</h3>
         <div class="row mb">
           <!-- page start-->
 
@@ -36,14 +36,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <input type="text" class="form-control" name="account_no" is="account_no">
                     </div>
                 </div-->
+                    <br><br>
 
                 <div class="form-group">
-                  <label class="control-label col-md-2">Date Range</label>
+                  <label class="control-label col-md-2">Date Range :</label>
                   <div class="col-md-4">
                     <div class="input-group input-large"  data-date-format="mm/dd/yyyy">
-                      <input type="date" class="form-control dpd1" name="from_date" id="from_date">
+                      <input type="date" class="form-control dpd1" name="from_date" id="from_date" values="<?php echo set_value('from_date');?>">
                       <span class="input-group-addon">To</span>
-                      <input type="date" class="form-control dpd2" name="to_date" id="to_date">
+                      <input type="date" class="form-control dpd2" name="to_date" id="to_date" values="<?php echo set_value('to_date');?>">
                     </div>
                     <span class="help-block">Select date range</span>
                   </div>
@@ -61,33 +62,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered">
                     <thead>
                       <tr class="gradeX">
-                        <th>Transaction Id</th>
-                        <th class="hidden-phone">Date & Time </th>
-                        <th class="hidden-phone">Remarks</th>
-                        <th class="hidden-phone">Debit</th>
-                        <th class="hidden-phone">Credit</th>
-                        <th class="hidden-phone">Amount</th>
-                        <th class="hidden-phone">Status</th>
+                          
+                      <th>Transaction Id</th>
+                      <th>Date & Time</th>
+                      <th>Remarks</th>
+                      <th>Debit(INR)</th>
+                      <th>Credit(INR)</th>
+                      <th>Balance</th>
               
                       </tr>
                     </thead>
                     <tbody>
                       <?php if($balance_in_range->num_rows() > 0)
                       {
-                        foreach ($balance_in_range->result() as $row) {?>
+                        foreach ($balance_in_range->result() as $rows) {?>
 
-                          <tr>
-                            <td><?php echo $row->sr_no;?></td>
-                            <td><?php echo $row->date;?></td>
-                            <td><?php echo $row->amount;?></td>
+                         <?php  $time=strtotime($rows->trans_date);
+
+                            $sanitized_time = date("d/m/Y, h:i A", $time);?>
+
+                            <!--td><?php echo $i;;?></td--><!--?php $i++;?-->
+                          <tr>  
+                            <td name="cust_id"><?php echo $rows->trans_id;?></td>
+                            <td><?php echo $sanitized_time;?></td>
+                            <td><?php echo $rows->remarks;?></td>
+                            <td><?php echo "<span style='color:  #ed5565'><b>- &#8377; ". $rows->debit ."</b></span>" ;?></td>
+                            <td><?php echo "<span style='color:  #4CAF50'><b>+ &#8377;  ". $rows->credit ."</b></span>" ;?></td>
+                            <td><?php echo "&#8377; ". $rows->balance;?></td> 
                           </tr>
-
                       <?php }
                       }
                       else
                         {?>
                         <tr>
-                          <td colspan="4">No record found</td>
+                          <td colspan="7">No record found</td>
                         </tr>
                         <?php
 

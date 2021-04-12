@@ -368,11 +368,12 @@ class Main_customer extends CI_Controller {
 
 	public function customized_statement()
 	{
+		$passbook_id = $this->session->userdata('customer_id');
 		$from_date = $this->input->post('from_date');
 		$to_date = $this->input->post('to_date');
 
 		$this->load->model('Main_customer_model');
-		$data['balance_in_range'] = $this->Main_customer_model->fetch_balance_by_range($from_date,$to_date);
+		$data['balance_in_range'] = $this->Main_customer_model->fetch_balance_by_range($from_date,$to_date,$passbook_id);
 
 		/*echo "<pre>";
 		print_r($data);
