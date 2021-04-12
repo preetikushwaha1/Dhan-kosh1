@@ -140,7 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
-
+           $.fn.dataTableExt.sErrMode = 'throw';    //to stop warning request unkonwn parameters
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{
           "bSortable": false,

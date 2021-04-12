@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
+  <style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
 <body>
   <section id="container">
  
@@ -10,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
 <aside>
-      <div id="sidebar" class="nav-collapse ">
+      <div id="sidebar" class="nav-collapse  hideblock">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="<?php echo base_url('assets2/img/ui-sam.jpg');?>" class="img-circle" width="80"></a></p>

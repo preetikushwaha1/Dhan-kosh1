@@ -8,6 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
+
+    <style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
+
 </head>
 
 <body>
@@ -17,6 +24,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
+
+                   <span class="hideblock"> <a href="#" onclick="window.print()">
+                  <span class="btn  btn-success fa fa-print" style="float:right;padding:10px;font-size: 14px" > Print</span> </a>
+                </span>
+                <br>
+
                  <?php if($this->session->flashdata('success')){?>
                     <div class="alert alert-success">      
                         <?php echo $this->session->flashdata('success')?><br>
@@ -121,11 +134,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>DhanKosh</strong>. All Rights Reserved
         </p>
-        <div class="credits">
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
-        </div>
+       
         <a href="advanced_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
@@ -149,6 +160,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
+       $.fn.dataTableExt.sErrMode = 'throw';
+
 
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{

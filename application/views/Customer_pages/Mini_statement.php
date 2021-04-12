@@ -123,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>DhanKosh</strong>. All Rights Reserved
         </p>
       
         <a href="advanced_table.html#" class="go-top">
@@ -149,6 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
+ $.fn.dataTableExt.sErrMode = 'throw';
 
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{

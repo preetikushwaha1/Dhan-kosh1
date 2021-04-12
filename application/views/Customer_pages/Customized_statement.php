@@ -11,7 +11,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
-
+  <style media="print">
+  .hideblock{
+      display:none;
+}
+</style>
 
 </head>
 
@@ -27,7 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
            <div class="form-panel">
-          
+                <span class="hideblock"> <a href="#" onclick="window.print()">
+                  <span class="btn  btn-success fa fa-print" style="float:right;padding:10px;font-size: 14px" > Print</span> </a>
+                </span>
+                <br>
               <form class="form-horizontal style-form" method="post" name="custoised_form" id="customised_form" 
               action="<?php echo site_url('Main_customer/customized_statement');?>">
                 <!--div class="form-group">
@@ -50,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
 
-                 <div align="center">
+                 <div align="center" class="hideblock">
                       <button type="submit" class="btn btn-theme">Submit</button>   
                   </div>
               </form>
@@ -104,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                      
                     </tbody>
                   </table>
-                </div>
+                </div><br><br><br>
               </div>
           <!-- page end-->
         </div>
@@ -144,6 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
+      $.fn.dataTableExt.sErrMode = 'throw';
 
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{

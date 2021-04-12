@@ -142,25 +142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     $(document).ready(function() {
-      /*
-       * Insert a 'details' column to the table
-       */
-     /* var nCloneTh = document.createElement('th');
-      var nCloneTd = document.createElement('td');
-      nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-      nCloneTd.className = "center";
-
-      $('#hidden-table-info thead tr').each(function() {
-        this.insertBefore(nCloneTh, this.childNodes[0]);
-      });
-
-      $('#hidden-table-info tbody tr').each(function() {
-        this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
-      });
-*/
-      /*
-       * Initialse DataTables, with no sorting on the 'details' column
-       */
+           $.fn.dataTableExt.sErrMode = 'throw';    //to stop warning request unkonwn parameters
       var oTable = $('#hidden-table-info').dataTable({
         "aoColumnDefs": [{
           "bSortable": false,
