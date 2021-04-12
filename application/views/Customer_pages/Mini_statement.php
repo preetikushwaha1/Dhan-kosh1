@@ -8,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
+
+
 </head>
 
 <body>
@@ -123,9 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p>
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
-        <div class="credits">
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
-        </div>
+      
         <a href="advanced_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>

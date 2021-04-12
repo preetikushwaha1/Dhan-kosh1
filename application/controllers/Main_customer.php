@@ -360,7 +360,7 @@ class Main_customer extends CI_Controller {
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
 		$this->load->view('Customer_pages/Mini_statement.php',$data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 
@@ -385,7 +385,7 @@ class Main_customer extends CI_Controller {
 		$this->load->view('Template2/Header.php');
 		$this->load->view('Template2/Customer_sidebar.php');
 		$this->load->view('Customer_pages/Customized_statement.php',$data);
-		$this->load->view('Template2/Footer.php');
+		//$this->load->view('Template2/Footer.php');
 
 	}
 
