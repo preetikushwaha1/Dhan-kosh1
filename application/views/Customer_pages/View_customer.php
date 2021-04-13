@@ -13,6 +13,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="<?php echo base_url('assets2/lib/advanced-datatable/css/demo_table.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo base_url('assets2/lib/advanced-datatable/css/DT_bootstrap.css');?>" />
  
+ <style>
+   
+    .decorate{
+       padding-left:150px;
+       font-size: 15px ;
+       color:#ffffff ;
+  }
+ </style>
 </head>
 
 <body>
@@ -26,6 +34,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <!-- page start-->
 
           <div class="form-panel">
+                <?php 
+                      if($fetch_data_by_customer_id->num_rows() > 0)
+
+                      {
+                        foreach ($fetch_data_by_customer_id->result() as $rows){?>
+                        
+                            <h4> Customer Id: <?php echo $rows->customer_id;?></h4>
+                          
+                       
+                       <?php }
+
+                      }
+                      else
+                      {?>
+                          <tr>
+                            <td  colspan="10">No Data Found</td>
+                          </tr>
+
+                       <?php
+                      }?>
           
               <!--form class="form-horizontal style-form" method="post" name="view_cust_form" id="view_cust_form" 
               action="<?php echo site_url('Main_customer/view_customer');?>">
@@ -43,69 +71,86 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </form-->
               <br>
 
-            <div class="content-panel">
-              <div class="adv-table">
-                <table cellpadding="2" cellspacing="2" border="0" class="display table table-bordered">
-                  <thead>
-                    <tr class="gradeX">
-                      
-                      
-                      
-                    
-                    
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!--tr class="gradeX">
-                      <td>Trident</td>
-                      <td>Internet Explorer 4.0</td>
-                      <td class="hidden-phone">Win 95+</td>
-                      <td class="center hidden-phone">4</td>
-                      <td class="center hidden-phone">X</td>
-                      <td class="hidden-phone">Win 95+</td>
-                      <td class="center hidden-phone">4</td>
-                      <td class="center hidden-phone">X</td>
-                      <td class="hidden-phone">Win 95+</td>
-                      <td class="hidden-phone">Win 95+</td>
-                
-                    </tr-->
-
-                    <!--?php 
-                        if(isset($_POST['search_by_Cust_id']))
-                        {
-                          $cust_id =  $_POST['customer_id'];
-                          $query = "SELECT * FROM customer_details where customer_id= $cust_id";
-                        }
-                      ?-->
+   
                     <?php 
                       if($fetch_data_by_customer_id->num_rows() > 0)
 
                       {
                         foreach ($fetch_data_by_customer_id->result() as $rows){?>
-                          <tr>
-                            <th>Customer Id</th>
-                            <td><?php echo $rows->customer_id;?></td>
-                          </tr>
-                          <tr>
-                            <th>Customer Name</th>
-                            <td><?php echo $rows->first_name." ".$rows->last_name;?></td>
-                          </tr>
-                          <tr>
-                            <th>Aadhar Card</th>
-                            <td><?php echo $rows->aadhar_card;?></td>
-                          </tr>
-                          <tr>
-                             <th>Pan Card</th>
-                             <td><?php echo $rows->pan_card;?></td>
-                          </tbody>
-                          <tr>
-                                <th>Gender</th>
-                                <td><?php echo $rows->gender?></td>
-                            </tr>
-                            <tr>  
-                                  <th>DOB</th>
-                                <td><?php echo $rows->dob?></td>
-                          </tr>
+                         
+                           <div class="row">
+                                <div class="col-md-6 col-sm-4 mb">
+                                    <div class="green-panel pn donut-chart">
+                                       <div class="green-header">
+                                       <h5 style="font-size: 25px;"><b>Customer Details</b></h5>
+                                      </div>
+                  
+                                       <div class="row">
+                                          <table>
+                                              <tr>
+                                                <th class="decorate">Customer Name : </th>
+                                                <td style="padding-left:20px;font-size: 15px"><?php echo $rows->first_name." ".$rows->last_name;?></td>
+                                              </tr>
+                                               <tr>
+                                                  <th  class="decorate">Aadhar Card : </th>
+                                                  <td><?php echo $rows->aadhar_card;?></td>
+                                                </tr>
+                                                <tr>
+                                                  <th  class="decorate">Pan Card :</th>
+                                                  <td><?php echo $rows->pan_card;?></td>
+                                                </tr>
+                                                <tr>
+                                                   <th class="decorate">Gender : </th>
+                                                   <td><?php echo $rows->gender?></td>
+                                                </tr>
+                                                  <tr>  
+                                                      <th  class="decorate">DOB :</th>
+                                                      <td><?php echo $rows->dob?></td>
+                                                   </tr>
+                                            </table>
+                                          
+                                     </div>
+                                 </div> 
+                                </div> 
+
+                                <div class="col-md-6 col-sm-4 mb">
+                                    <div class="green-panel pn donut-chart">
+                                       <div class="green-header">
+                                       <h5 style="font-size: 25px;"><b>Address Details</b></h5>
+                                      </div>
+                  
+                                       <div class="row">
+                                          <table>
+                                              <tr>
+                                                <th  class="decorate">Address:</th>
+                                                <td><?php echo $rows->address;?></td>
+                                              </tr>
+                                               <tr>
+                                                  <th class="decorate">State: </th>
+                                                  <td><?php echo $rows->state;?></td>
+                                                </tr>
+                                                <tr>
+                                                  <th  class="decorate">City:</th>
+                                                  <td><?php echo $rows->city;?></td>
+                                                </tr>
+                                                <tr>
+                                                   <th class="decorate">Pincode</th>
+                                                   <td><?php echo $rows->pincode;?></td>
+                                                </tr>
+                                                  <tr>  
+                                                      <th   class="decorate">Phone Number:</th>
+                                                      <td><?php echo $rows->phone_no;?></td>
+                                                   </tr>
+                                                    <tr>  
+                                                      <th   class="decorate">email:</th>
+                                                      <td><?php echo $rows->email;?></td>
+                                                   </tr>
+                                            </table>
+                                          
+                                     </div>
+                                 </div> 
+                                </div> 
+
                           
                        <?php }
 
@@ -125,61 +170,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <br>
 
-            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered">
-              <thead>
-                <label class="col-sm-2 col-sm-2 control-label"><h4>Address Details</h4></label>
-                    <tr class="gradeX">
-                      <th>Address</th>
-                      <th>State</th>
-                      <th>City</th>
-                      <th>Pincode</th>
-                      <th>Mobile no</th>
-                      <th>Email</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!--tr class="gradeX">
-                      <td>Trident</td>
-                      <td>Internet Explorer 4.0</td>
-                      <td class="hidden-phone">Win 95+</td>
-                      <td class="center hidden-phone">4</td>
-                      <td class="center hidden-phone">X</td>
-                      <td class="hidden-phone">Win 95+</td>
-                      <td class="center hidden-phone">4</td>
-                      <td class="center hidden-phone">X</td>
-                      <td class="hidden-phone">Win 95+</td>
-                      <td class="hidden-phone">Win 95+</td>
-                
-                    </tr-->
-                    <?php 
-                      if($fetch_data_by_customer_id->num_rows() > 0)
-                      {
-                        foreach ($fetch_data_by_customer_id->result() as $rows){?>
-                   
-                          <tr>
-                            <td><?php echo $rows->address?></td>
-                            <td><?php echo $rows->state?></td>
-                            <td><?php echo $rows->city?></td>
-                            <td><?php echo $rows->pincode?></td>
-                            <td><?php echo $rows->phone_no?></td>
-                            <td><?php echo $rows->email?></td>
-                          </tr>
-                          
-                       <?php }
-
-                      }
-                      else
-                      {?>
-                          <tr>
-                            <td colspan="10">No Data Found</td>
-                          </tr>
-
-                       <?php
-                      }?>
-                   
-                   
-                  </tbody>
-                </table>
 
 
               </div>
