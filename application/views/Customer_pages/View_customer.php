@@ -15,10 +15,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
  <style>
    
-    .decorate{
-       padding-left:150px;
-       font-size: 15px ;
+    .th_decorate{
+       padding-left:120px;
+       font-size: 18px ;
        color:#ffffff ;
+  }
+  .tr_decorate
+  {
+      padding-left:20px;
+      font-size: 15px;
+      color:#DC143C ;
+      font-weight:700;
+      text-align: left;
+
+
   }
  </style>
 </head>
@@ -88,24 +98,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                        <div class="row">
                                           <table>
                                               <tr>
-                                                <th class="decorate">Customer Name : </th>
-                                                <td style="padding-left:20px;font-size: 15px"><?php echo $rows->first_name." ".$rows->last_name;?></td>
+                                                <th class="th_decorate">Customer Name : </th>
+                                                <td class="tr_decorate" ><?php echo $rows->first_name." ".$rows->last_name;?></td>
                                               </tr>
                                                <tr>
-                                                  <th  class="decorate">Aadhar Card : </th>
-                                                  <td><?php echo $rows->aadhar_card;?></td>
+                                                  <th  class="th_decorate">Aadhar Card : </th>
+                                                  <td class="tr_decorate"><?php echo $rows->aadhar_card;?></td>
                                                 </tr>
                                                 <tr>
-                                                  <th  class="decorate">Pan Card :</th>
-                                                  <td><?php echo $rows->pan_card;?></td>
+                                                  <th  class="th_decorate">Pan Card :</th>
+                                                  <td class="tr_decorate"><?php echo $rows->pan_card;?></td>
                                                 </tr>
                                                 <tr>
-                                                   <th class="decorate">Gender : </th>
-                                                   <td><?php echo $rows->gender?></td>
+                                                   <th class="th_decorate">Gender : </th>
+                                                   <td class="tr_decorate"><?php echo $rows->gender?></td>
                                                 </tr>
                                                   <tr>  
-                                                      <th  class="decorate">DOB :</th>
-                                                      <td><?php echo $rows->dob?></td>
+                                                      <th  class="th_decorate">DOB :</th>
+                                                      <td class="tr_decorate"><?php echo $rows->dob?></td>
                                                    </tr>
                                             </table>
                                           
@@ -122,28 +132,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                        <div class="row">
                                           <table>
                                               <tr>
-                                                <th  class="decorate">Address:</th>
-                                                <td><?php echo $rows->address;?></td>
+                                                <th  class="th_decorate">Address :</th>
+                                                <td class="tr_decorate"><?php echo $rows->address;?></td>
                                               </tr>
                                                <tr>
-                                                  <th class="decorate">State: </th>
-                                                  <td><?php echo $rows->state;?></td>
+                                                  <th class="th_decorate">State : </th>
+                                                  <td  class="tr_decorate"><?php echo $rows->state;?></td>
                                                 </tr>
                                                 <tr>
-                                                  <th  class="decorate">City:</th>
-                                                  <td><?php echo $rows->city;?></td>
+                                                  <th  class="th_decorate">City :</th>
+                                                  <td class="tr_decorate"><?php echo $rows->city;?></td>
                                                 </tr>
                                                 <tr>
-                                                   <th class="decorate">Pincode</th>
-                                                   <td><?php echo $rows->pincode;?></td>
+                                                   <th class="th_decorate">Pincode :</th>
+                                                   <td class="tr_decorate"><?php echo $rows->pincode;?></td>
                                                 </tr>
                                                   <tr>  
-                                                      <th   class="decorate">Phone Number:</th>
-                                                      <td><?php echo $rows->phone_no;?></td>
+                                                      <th  class="th_decorate">Phone Number :</th>
+                                                      <td class="tr_decorate"><?php echo $rows->phone_no;?></td>
                                                    </tr>
                                                     <tr>  
-                                                      <th   class="decorate">email:</th>
-                                                      <td><?php echo $rows->email;?></td>
+                                                      <th   class="th_decorate">Email :</th>
+                                                      <td class="tr_decorate"><?php echo $rows->email;?></td>
                                                    </tr>
                                             </table>
                                           
