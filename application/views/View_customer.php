@@ -18,6 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <!-- page start-->
               <div class="form-panel">
 
+                
                 <?php if($this->session->flashdata('success')){?>
                     <div class="alert alert-success">      
                         <?php echo $this->session->flashdata('success')?><br>

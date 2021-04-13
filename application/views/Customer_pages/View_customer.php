@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><!--i class="fa fa-angle-right"--></i>View Customer</h3>
+        <h3></i>View Customer</h3>
         <div class="row mb">
           <!-- page start-->
 
@@ -48,12 +48,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <table cellpadding="2" cellspacing="2" border="0" class="display table table-bordered">
                   <thead>
                     <tr class="gradeX">
-                      <th>Customer Id</th>
-                      <th>Customer Name</th>
-                      <th>Aadhar Card</th>
-                      <th>Pan Card</th>
-                      <th>Gender</th>
-                      <th>DOB</th>
+                      
+                      
+                      
+                    
+                    
                     </tr>
                   </thead>
                   <tbody>
@@ -84,12 +83,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       {
                         foreach ($fetch_data_by_customer_id->result() as $rows){?>
                           <tr>
+                            <th>Customer Id</th>
                             <td><?php echo $rows->customer_id;?></td>
+                          </tr>
+                          <tr>
+                            <th>Customer Name</th>
                             <td><?php echo $rows->first_name." ".$rows->last_name;?></td>
+                          </tr>
+                          <tr>
+                            <th>Aadhar Card</th>
                             <td><?php echo $rows->aadhar_card;?></td>
-                            <td><?php echo $rows->pan_card;?></td>
-                            <td><?php echo $rows->gender?></td>
-                            <td><?php echo $rows->dob?></td>
+                          </tr>
+                          <tr>
+                             <th>Pan Card</th>
+                             <td><?php echo $rows->pan_card;?></td>
+                          </tbody>
+                          <tr>
+                                <th>Gender</th>
+                                <td><?php echo $rows->gender?></td>
+                            </tr>
+                            <tr>  
+                                  <th>DOB</th>
+                                <td><?php echo $rows->dob?></td>
                           </tr>
                           
                        <?php }
