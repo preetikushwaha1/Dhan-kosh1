@@ -82,7 +82,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </form-->
               <br>
 
-   
                     <?php 
                       if($fetch_data_by_customer_id->num_rows() > 0)
 
