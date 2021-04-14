@@ -187,13 +187,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                        <?php
                       }?>
                    
-                   
                   </tbody>
                 </table>
 
                 <br>
-
-
 
               </div>
             </div>
