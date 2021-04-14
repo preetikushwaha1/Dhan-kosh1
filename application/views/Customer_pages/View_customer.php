@@ -16,14 +16,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <style>
    
     .th_decorate{
-       padding-left:120px;
-       font-size: 18px ;
-       color:#ffffff ;
+       padding-left:100px;
+       font-size: 17px ;
+       color:#000000;
   }
   .tr_decorate
   {
       padding-left:20px;
-      font-size: 15px;
+      font-size: 17px;
       color:#DC143C ;
       font-weight:700;
       text-align: left;
@@ -90,31 +90,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          
                            <div class="row">
                                 <div class="col-md-6 col-sm-4 mb">
-                                    <div class="green-panel pn donut-chart">
-                                       <div class="green-header">
+                                    <div class="green-panel pn donut-chart" style="background-color: #B0E0E6">
+                                       <div class="green-header" >
                                        <h5 style="font-size: 25px;"><b>Customer Details</b></h5>
                                       </div>
                   
-                                       <div class="row">
+                                       <div class="row" >
                                           <table>
                                               <tr>
-                                                <th class="th_decorate">Customer Name : </th>
+                                                <th class="th_decorate">Customer Name&nbsp;&nbsp;: </th>
                                                 <td class="tr_decorate" ><?php echo $rows->first_name." ".$rows->last_name;?></td>
                                               </tr>
                                                <tr>
-                                                  <th  class="th_decorate">Aadhar Card : </th>
+                                                  <th  class="th_decorate">Aadhar Card&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </th>
                                                   <td class="tr_decorate"><?php echo $rows->aadhar_card;?></td>
                                                 </tr>
                                                 <tr>
-                                                  <th  class="th_decorate">Pan Card :</th>
+                                                  <th  class="th_decorate">Pan Card&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</th>
                                                   <td class="tr_decorate"><?php echo $rows->pan_card;?></td>
                                                 </tr>
                                                 <tr>
-                                                   <th class="th_decorate">Gender : </th>
+                                                   <th class="th_decorate">Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </th>
                                                    <td class="tr_decorate"><?php echo $rows->gender?></td>
                                                 </tr>
                                                   <tr>  
-                                                      <th  class="th_decorate">DOB :</th>
+                                                      <th  class="th_decorate">DOB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</th>
                                                       <td class="tr_decorate"><?php echo $rows->dob?></td>
                                                    </tr>
                                             </table>
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div> 
 
                                 <div class="col-md-6 col-sm-4 mb">
-                                    <div class="green-panel pn donut-chart">
+                                    <div class="green-panel pn donut-chart" style="background-color: #B0E0E6">
                                        <div class="green-header">
                                        <h5 style="font-size: 25px;"><b>Address Details</b></h5>
                                       </div>
@@ -132,27 +132,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                        <div class="row">
                                           <table>
                                               <tr>
-                                                <th  class="th_decorate">Address :</th>
+                                                <th  class="th_decorate">Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</th>
                                                 <td class="tr_decorate"><?php echo $rows->address;?></td>
                                               </tr>
                                                <tr>
-                                                  <th class="th_decorate">State : </th>
+                                                  <th class="th_decorate">State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </th>
                                                   <td  class="tr_decorate"><?php echo $rows->state;?></td>
                                                 </tr>
                                                 <tr>
-                                                  <th  class="th_decorate">City :</th>
+                                                  <th  class="th_decorate">City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</th>
                                                   <td class="tr_decorate"><?php echo $rows->city;?></td>
                                                 </tr>
                                                 <tr>
-                                                   <th class="th_decorate">Pincode :</th>
+                                                   <th class="th_decorate">Pincode &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</th>
                                                    <td class="tr_decorate"><?php echo $rows->pincode;?></td>
                                                 </tr>
                                                   <tr>  
-                                                      <th  class="th_decorate">Phone Number :</th>
+                                                      <th  class="th_decorate">Phone Number&nbsp; :</th>
                                                       <td class="tr_decorate"><?php echo $rows->phone_no;?></td>
                                                    </tr>
                                                     <tr>  
-                                                      <th   class="th_decorate">Email :</th>
+                                                      <th   class="th_decorate">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</th>
                                                       <td class="tr_decorate"><?php echo $rows->email;?></td>
                                                    </tr>
                                             </table>
@@ -167,9 +167,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       }
                       else
                       {?>
-                          <tr>
-                            <td  colspan="10">No Data Found</td>
-                          </tr>
+                          <div class="row">
+                                <div class="col-md-6 col-sm-4 mb">
+                                    <div class="green-panel pn donut-chart">
+                                       <div class="green-header" style="background-color: #B0E0E6">
+                                       <h5 style="font-size: 25px;"><b>Customer Details</b></h5>
+                                      </div>
+                  
+                                       <div class="row">
+                                          <table>
+                                              <tr>
+                                                <td colspan="4">NO Data Found</td>
+                                              </tr>
+                                              
+                                     </div>
+                                 </div> 
+                                </div> 
 
                        <?php
                       }?>
