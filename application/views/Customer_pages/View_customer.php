@@ -50,7 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       {
                         foreach ($fetch_data_by_customer_id->result() as $rows){?>
                         
-                            <h4> Customer Id: <?php echo $rows->customer_id;?></h4>
+                            <h3 style="text-align: center;"><b>Customer Id: <?php echo $rows->customer_id;?></b></h3>
+                            <br>
                           
                        
                        <?php }
