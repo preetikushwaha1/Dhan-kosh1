@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div id="sidebar" class="nav-collapse hideblock">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="#"><img src="<?php echo base_url('assets2/img/ui-sam.jpg');?>" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="#"><img src="<?php echo base_url('assets2/img/preeti.jpeg');?>" class="img-circle" height="80" width="80"></a></p>
           <h5 class="centered" style=" font-variant: small-caps; font-size: 20px;"><?php echo $this->session->userdata('user_name');?></h5>
 
           <li class="mt">

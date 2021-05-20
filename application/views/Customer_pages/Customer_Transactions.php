@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <section id="main-content">
       <section class="wrapper">
-         <h3></i>View Customer</h3>
+         <h3></i>View Transactions</h3>
         <div class="row mb">
           <!-- page start-->
               <div class="form-panel">
@@ -177,9 +177,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     });
   </script>
 </body>
-
-
-
 </html>
 
 

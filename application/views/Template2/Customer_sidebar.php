@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="sub-menu">
             <a href="<?php echo site_url('Main_customer/view_customer');?>">
               <i class="fa fa-user-circle"></i>
-              <span>Customer Details</span>
+              <span>Customer Profile</span>
               </a>
             <!--ul class="sub">
               <li><a href="<?php //echo site_url('Main/new_customer');?>">Add New Customer</a></li>
@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="sub-menu">
             <a href="<?php echo site_url('Main_customer/customized_statement');?>">
               <i class="fa fa-book"></i>
-              <span>Customised Statement</span>
+              <span>Customized Statement</span>
               </a>
           </li>
 
@@ -103,12 +103,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </a>
           </li>
 
-          <li>
+          <!--li>
             <a href="<?php echo site_url('Main_customer/profile');?>">
               <i class="fa fa-user"></i>
               <span>Profile</span>
               </a>
-          </li>
+          </li-->
 
 
           <li>
